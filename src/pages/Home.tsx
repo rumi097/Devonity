@@ -515,56 +515,349 @@ const Home = () => {
       </section>
 
       {/* Page Previews Section */}
-      <section className="py-8 sm:py-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-8 sm:py-12 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-6"
+            className="text-center mb-8"
           >
-            <h2 className="text-2xl sm:text-3xl font-display font-bold mb-2 text-gradient">
-              Explore Our Website
-            </h2>
-            <p className="text-sm text-gray-600">Quick access to all sections</p>
+            <motion.h2 
+              className="text-2xl sm:text-3xl font-display font-bold mb-2 text-gradient"
+              animate={{ 
+                backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              }}
+              transition={{ duration: 5, repeat: Infinity }}
+            >
+              Explore Our Services
+            </motion.h2>
+            <p className="text-sm text-gray-600">Quick access to everything we offer</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 max-w-5xl mx-auto">
             {/* About Preview */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.05, type: "spring", stiffness: 200 }}
             >
               <Link to="/about" className="group block">
                 <motion.div
-                  whileHover={{ y: -4, scale: 1.05 }}
+                  whileHover={{ y: -6, scale: 1.08 }}
                   animate={{ 
                     boxShadow: [
-                      '0 4px 15px rgba(168, 85, 247, 0.2)',
-                      '0 6px 20px rgba(168, 85, 247, 0.3)',
-                      '0 4px 15px rgba(168, 85, 247, 0.2)',
-                    ]
+                      '0 4px 20px rgba(168, 85, 247, 0.15)',
+                      '0 8px 30px rgba(168, 85, 247, 0.25)',
+                      '0 4px 20px rgba(168, 85, 247, 0.15)',
+                    ],
+                    y: [0, -3, 0]
                   }}
                   transition={{ 
-                    boxShadow: { duration: 2, repeat: Infinity },
-                    hover: { duration: 0.2 }
+                    boxShadow: { duration: 2.5, repeat: Infinity, ease: "easeInOut" },
+                    y: { duration: 3.5, repeat: Infinity, ease: "easeInOut" },
+                    hover: { duration: 0.3 }
                   }}
-                  className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-purple-100"
+                  className="bg-white rounded-2xl p-4 text-center relative overflow-hidden border border-purple-100/50 backdrop-blur-sm"
                 >
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-purple-600/5"
-                    animate={{ opacity: [0.5, 0.8, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute inset-0 bg-gradient-to-br from-purple-400/10 via-purple-500/5 to-transparent"
+                    animate={{ 
+                      opacity: [0.4, 0.7, 0.4],
+                      rotate: [0, 5, 0]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity }}
                   />
                   <div className="relative z-10">
                     <motion.div 
-                      className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center"
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 3, repeat: Infinity }}
+                      className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
+                      animate={{ 
+                        rotate: [0, 8, -8, 0],
+                        scale: [1, 1.15, 1]
+                      }}
+                      transition={{ duration: 5, repeat: Infinity }}
                     >
-                      <FiInfo className="text-white" size={18} />
+                      <motion.div
+                        animate={{ 
+                          rotate: [0, 360],
+                          scale: [1, 1.2, 1]
+                        }}
+                        transition={{ 
+                          rotate: { duration: 10, repeat: Infinity, ease: "linear" },
+                          scale: { duration: 2, repeat: Infinity }
+                        }}
+                      >
+                        <FiInfo className="text-white" size={20} />
+                      </motion.div>
+                    </motion.div>
+                    <h3 className="text-sm font-bold mb-1 group-hover:text-purple-600 transition-colors">About</h3>
+                    <p className="text-[10px] text-gray-500">Our Story</p>
+                  </div>
+                  <motion.div
+                    className="absolute -bottom-1 -right-1 w-16 h-16 bg-purple-500/5 rounded-tl-full"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            {/* Services Preview */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+            >
+              <Link to="/services" className="group block">
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.08 }}
+                  animate={{ 
+                    boxShadow: [
+                      '0 4px 20px rgba(34, 197, 94, 0.15)',
+                      '0 8px 30px rgba(34, 197, 94, 0.25)',
+                      '0 4px 20px rgba(34, 197, 94, 0.15)',
+                    ],
+                    y: [0, -3, 0]
+                  }}
+                  transition={{ 
+                    boxShadow: { duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 },
+                    y: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 },
+                    hover: { duration: 0.3 }
+                  }}
+                  className="bg-white rounded-2xl p-4 text-center relative overflow-hidden border border-green-100/50 backdrop-blur-sm"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-green-400/10 via-green-500/5 to-transparent"
+                    animate={{ 
+                      opacity: [0.4, 0.7, 0.4],
+                      rotate: [0, -5, 0]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, delay: 0.3 }}
+                  />
+                  <div className="relative z-10">
+                    <motion.div 
+                      className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg"
+                      animate={{ 
+                        rotate: [0, -8, 8, 0],
+                        scale: [1, 1.15, 1]
+                      }}
+                      transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
+                    >
+                      <motion.div
+                        animate={{ 
+                          scale: [1, 1.3, 1]
+                        }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        <FiGrid className="text-white" size={20} />
+                      </motion.div>
+                    </motion.div>
+                    <h3 className="text-sm font-bold mb-1 group-hover:text-green-600 transition-colors">Services</h3>
+                    <p className="text-[10px] text-gray-500">What We Do</p>
+                  </div>
+                  <motion.div
+                    className="absolute -top-1 -left-1 w-16 h-16 bg-green-500/5 rounded-br-full"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+                  />
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            {/* Portfolio Preview */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15, type: "spring", stiffness: 200 }}
+            >
+              <Link to="/portfolio" className="group block">
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.08 }}
+                  animate={{ 
+                    boxShadow: [
+                      '0 4px 20px rgba(249, 115, 22, 0.15)',
+                      '0 8px 30px rgba(249, 115, 22, 0.25)',
+                      '0 4px 20px rgba(249, 115, 22, 0.15)',
+                    ],
+                    y: [0, -3, 0]
+                  }}
+                  transition={{ 
+                    boxShadow: { duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
+                    y: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
+                    hover: { duration: 0.3 }
+                  }}
+                  className="bg-white rounded-2xl p-4 text-center relative overflow-hidden border border-orange-100/50 backdrop-blur-sm"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-orange-400/10 via-orange-500/5 to-transparent"
+                    animate={{ 
+                      opacity: [0.4, 0.7, 0.4],
+                      rotate: [0, 5, 0]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, delay: 0.6 }}
+                  />
+                  <div className="relative z-10">
+                    <motion.div 
+                      className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg"
+                      animate={{ 
+                        rotate: [0, 8, -8, 0],
+                        scale: [1, 1.15, 1]
+                      }}
+                      transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+                    >
+                      <motion.div
+                        animate={{ 
+                          y: [0, -3, 0]
+                        }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        <FiBriefcase className="text-white" size={20} />
+                      </motion.div>
+                    </motion.div>
+                    <h3 className="text-sm font-bold mb-1 group-hover:text-orange-600 transition-colors">Portfolio</h3>
+                    <p className="text-[10px] text-gray-500">Our Work</p>
+                  </div>
+                  <motion.div
+                    className="absolute -bottom-1 -left-1 w-16 h-16 bg-orange-500/5 rounded-tr-full"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                  />
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            {/* Blog Preview */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            >
+              <Link to="/blog" className="group block">
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.08 }}
+                  animate={{ 
+                    boxShadow: [
+                      '0 4px 20px rgba(236, 72, 153, 0.15)',
+                      '0 8px 30px rgba(236, 72, 153, 0.25)',
+                      '0 4px 20px rgba(236, 72, 153, 0.15)',
+                    ],
+                    y: [0, -3, 0]
+                  }}
+                  transition={{ 
+                    boxShadow: { duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 },
+                    y: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.9 },
+                    hover: { duration: 0.3 }
+                  }}
+                  className="bg-white rounded-2xl p-4 text-center relative overflow-hidden border border-pink-100/50 backdrop-blur-sm"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-pink-400/10 via-pink-500/5 to-transparent"
+                    animate={{ 
+                      opacity: [0.4, 0.7, 0.4],
+                      rotate: [0, -5, 0]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, delay: 0.9 }}
+                  />
+                  <div className="relative z-10">
+                    <motion.div 
+                      className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg"
+                      animate={{ 
+                        rotate: [0, -8, 8, 0],
+                        scale: [1, 1.15, 1]
+                      }}
+                      transition={{ duration: 5, repeat: Infinity, delay: 1.5 }}
+                    >
+                      <motion.div
+                        animate={{ 
+                          rotateY: [0, 180, 360]
+                        }}
+                        transition={{ duration: 4, repeat: Infinity }}
+                      >
+                        <FiBook className="text-white" size={20} />
+                      </motion.div>
+                    </motion.div>
+                    <h3 className="text-sm font-bold mb-1 group-hover:text-pink-600 transition-colors">Blog</h3>
+                    <p className="text-[10px] text-gray-500">Insights</p>
+                  </div>
+                  <motion.div
+                    className="absolute -top-1 -right-1 w-16 h-16 bg-pink-500/5 rounded-bl-full"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+                  />
+                </motion.div>
+              </Link>
+            </motion.div>
+
+            {/* Contact Preview */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25, type: "spring", stiffness: 200 }}
+            >
+              <Link to="/contact" className="group block">
+                <motion.div
+                  whileHover={{ y: -6, scale: 1.08 }}
+                  animate={{ 
+                    boxShadow: [
+                      '0 4px 20px rgba(239, 68, 68, 0.15)',
+                      '0 8px 30px rgba(239, 68, 68, 0.25)',
+                      '0 4px 20px rgba(239, 68, 68, 0.15)',
+                    ],
+                    y: [0, -3, 0]
+                  }}
+                  transition={{ 
+                    boxShadow: { duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
+                    y: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
+                    hover: { duration: 0.3 }
+                  }}
+                  className="bg-white rounded-2xl p-4 text-center relative overflow-hidden border border-red-100/50 backdrop-blur-sm"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-red-400/10 via-red-500/5 to-transparent"
+                    animate={{ 
+                      opacity: [0.4, 0.7, 0.4],
+                      rotate: [0, 5, 0]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, delay: 1.2 }}
+                  />
+                  <div className="relative z-10">
+                    <motion.div 
+                      className="w-12 h-12 mx-auto mb-3 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg"
+                      animate={{ 
+                        rotate: [0, 8, -8, 0],
+                        scale: [1, 1.15, 1]
+                      }}
+                      transition={{ duration: 5, repeat: Infinity, delay: 2 }}
+                    >
+                      <motion.div
+                        animate={{ 
+                          scale: [1, 1.2, 1],
+                          rotate: [0, 15, -15, 0]
+                        }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                      >
+                        <FiMail className="text-white" size={20} />
+                      </motion.div>
+                    </motion.div>
+                    <h3 className="text-sm font-bold mb-1 group-hover:text-red-600 transition-colors">Contact</h3>
+                    <p className="text-[10px] text-gray-500">Get Quote</p>
+                  </div>
+                  <motion.div
+                    className="absolute -bottom-1 -right-1 w-16 h-16 bg-red-500/5 rounded-tl-full"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 2 }}
+                  />
+                </motion.div>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
                     </motion.div>
                     <h3 className="text-xs font-bold mb-1 group-hover:text-purple-600 transition-colors">About</h3>
                     <p className="text-[10px] text-gray-500">Our Story</p>
@@ -588,26 +881,39 @@ const Home = () => {
                       '0 4px 15px rgba(34, 197, 94, 0.2)',
                       '0 6px 20px rgba(34, 197, 94, 0.3)',
                       '0 4px 15px rgba(34, 197, 94, 0.2)',
-                    ]
+                    ],
+                    y: [0, -2, 0]
                   }}
                   transition={{ 
                     boxShadow: { duration: 2, repeat: Infinity, delay: 0.3 },
+                    y: { duration: 3, repeat: Infinity, delay: 0.2 },
                     hover: { duration: 0.2 }
                   }}
                   className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-green-100"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-green-600/5"
-                    animate={{ opacity: [0.5, 0.8, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                    animate={{ 
+                      opacity: [0.3, 0.6, 0.3],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 0.3 }}
                   />
                   <div className="relative z-10">
                     <motion.div 
                       className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center"
-                      animate={{ rotate: [0, -5, 5, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+                      animate={{ 
+                        rotate: [0, -5, 5, 0],
+                        scale: [1, 1.1, 1]
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
                     >
-                      <FiGrid className="text-white" size={18} />
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                      >
+                        <FiGrid className="text-white" size={18} />
+                      </motion.div>
                     </motion.div>
                     <h3 className="text-xs font-bold mb-1 group-hover:text-green-600 transition-colors">Services</h3>
                     <p className="text-[10px] text-gray-500">What We Do</p>
@@ -631,26 +937,39 @@ const Home = () => {
                       '0 4px 15px rgba(249, 115, 22, 0.2)',
                       '0 6px 20px rgba(249, 115, 22, 0.3)',
                       '0 4px 15px rgba(249, 115, 22, 0.2)',
-                    ]
+                    ],
+                    y: [0, -2, 0]
                   }}
                   transition={{ 
                     boxShadow: { duration: 2, repeat: Infinity, delay: 0.6 },
+                    y: { duration: 3, repeat: Infinity, delay: 0.4 },
                     hover: { duration: 0.2 }
                   }}
                   className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-orange-100"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-orange-600/5"
-                    animate={{ opacity: [0.5, 0.8, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
+                    animate={{ 
+                      opacity: [0.3, 0.6, 0.3],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}
                   />
                   <div className="relative z-10">
                     <motion.div 
                       className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center"
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                      animate={{ 
+                        rotate: [0, 5, -5, 0],
+                        scale: [1, 1.1, 1]
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, delay: 1 }}
                     >
-                      <FiBriefcase className="text-white" size={18} />
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                      >
+                        <FiBriefcase className="text-white" size={18} />
+                      </motion.div>
                     </motion.div>
                     <h3 className="text-xs font-bold mb-1 group-hover:text-orange-600 transition-colors">Portfolio</h3>
                     <p className="text-[10px] text-gray-500">Our Work</p>
@@ -674,26 +993,39 @@ const Home = () => {
                       '0 4px 15px rgba(236, 72, 153, 0.2)',
                       '0 6px 20px rgba(236, 72, 153, 0.3)',
                       '0 4px 15px rgba(236, 72, 153, 0.2)',
-                    ]
+                    ],
+                    y: [0, -2, 0]
                   }}
                   transition={{ 
                     boxShadow: { duration: 2, repeat: Infinity, delay: 0.9 },
+                    y: { duration: 3, repeat: Infinity, delay: 0.6 },
                     hover: { duration: 0.2 }
                   }}
                   className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-pink-100"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-pink-600/5"
-                    animate={{ opacity: [0.5, 0.8, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}
+                    animate={{ 
+                      opacity: [0.3, 0.6, 0.3],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 0.9 }}
                   />
                   <div className="relative z-10">
                     <motion.div 
                       className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center"
-                      animate={{ rotate: [0, -5, 5, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+                      animate={{ 
+                        rotate: [0, -5, 5, 0],
+                        scale: [1, 1.1, 1]
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, delay: 1.5 }}
                     >
-                      <FiBook className="text-white" size={18} />
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                      >
+                        <FiBook className="text-white" size={18} />
+                      </motion.div>
                     </motion.div>
                     <h3 className="text-xs font-bold mb-1 group-hover:text-pink-600 transition-colors">Blog</h3>
                     <p className="text-[10px] text-gray-500">Insights</p>
@@ -717,71 +1049,45 @@ const Home = () => {
                       '0 4px 15px rgba(239, 68, 68, 0.2)',
                       '0 6px 20px rgba(239, 68, 68, 0.3)',
                       '0 4px 15px rgba(239, 68, 68, 0.2)',
-                    ]
+                    ],
+                    y: [0, -2, 0]
                   }}
                   transition={{ 
                     boxShadow: { duration: 2, repeat: Infinity, delay: 1.2 },
+                    y: { duration: 3, repeat: Infinity, delay: 0.8 },
                     hover: { duration: 0.2 }
                   }}
                   className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-red-100"
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-red-600/5"
-                    animate={{ opacity: [0.5, 0.8, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1.2 }}
+                    animate={{ 
+                      opacity: [0.3, 0.6, 0.3],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 1.2 }}
                   />
                   <div className="relative z-10">
                     <motion.div 
                       className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center"
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: 2 }}
+                      animate={{ 
+                        rotate: [0, 5, -5, 0],
+                        scale: [1, 1.1, 1]
+                      }}
+                      transition={{ duration: 4, repeat: Infinity, delay: 2 }}
                     >
-                      <FiMail className="text-white" size={18} />
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                      >
+                        <FiMail className="text-white" size={18} />
+                      </motion.div>
                     </motion.div>
                     <h3 className="text-xs font-bold mb-1 group-hover:text-red-600 transition-colors">Contact</h3>
                     <p className="text-[10px] text-gray-500">Get Quote</p>
                   </div>
                 </motion.div>
               </Link>
-            </motion.div>
-
-            {/* Why Choose Us Preview */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.35 }}
-            >
-              <motion.div
-                whileHover={{ y: -4, scale: 1.05 }}
-                animate={{ 
-                  boxShadow: [
-                    '0 4px 15px rgba(99, 102, 241, 0.3)',
-                    '0 6px 20px rgba(168, 85, 247, 0.4)',
-                    '0 4px 15px rgba(99, 102, 241, 0.3)',
-                  ]
-                }}
-                transition={{ 
-                  boxShadow: { duration: 2, repeat: Infinity, delay: 1.5 },
-                  hover: { duration: 0.2 }
-                }}
-                className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-xl p-3 text-center relative overflow-hidden"
-              >
-                <div className="relative z-10">
-                  <motion.div 
-                    className="w-10 h-10 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm"
-                    animate={{ 
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 10, -10, 0]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    <FiAward className="text-white" size={18} />
-                  </motion.div>
-                  <h3 className="text-xs font-bold mb-1 text-white">Premium</h3>
-                  <p className="text-[10px] text-white/80">Quality</p>
-                </div>
-              </motion.div>
             </motion.div>
           </div>
         </div>

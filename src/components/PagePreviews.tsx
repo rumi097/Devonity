@@ -5,8 +5,7 @@ import {
   FiGrid, 
   FiBriefcase, 
   FiBook, 
-  FiMail,
-  FiAward
+  FiMail
 } from 'react-icons/fi';
 
 const PagePreviews = () => {
@@ -98,7 +97,7 @@ const PagePreviews = () => {
           <p className="text-xs text-gray-600">Explore more sections</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-3xl mx-auto justify-items-center">
           {filteredPages.map((page, index) => (
             <motion.div
               key={page.path}
@@ -115,26 +114,53 @@ const PagePreviews = () => {
                       `0 4px 15px ${page.shadowColor}`,
                       `0 6px 20px ${page.shadowColorHover}`,
                       `0 4px 15px ${page.shadowColor}`,
-                    ]
+                    ],
+                    y: [0, -2, 0]
                   }}
                   transition={{ 
                     boxShadow: { duration: 2, repeat: Infinity, delay: page.delay * 2 },
+                    y: { duration: 3, repeat: Infinity, delay: index * 0.2 },
                     hover: { duration: 0.2 }
                   }}
                   className={`bg-white rounded-xl p-3 text-center relative overflow-hidden border ${page.borderColor}`}
                 >
                   <motion.div
                     className={`absolute inset-0 bg-gradient-to-br ${page.bgGradient}`}
-                    animate={{ opacity: [0.5, 0.8, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: page.delay }}
+                    animate={{ 
+                      opacity: [0.3, 0.6, 0.3],
+                      scale: [1, 1.1, 1]
+                    }}
+                    transition={{ 
+                      duration: 3, 
+                      repeat: Infinity, 
+                      delay: page.delay 
+                    }}
                   />
                   <div className="relative z-10">
                     <motion.div 
                       className={`w-10 h-10 mx-auto mb-2 bg-gradient-to-br ${page.gradient} rounded-lg flex items-center justify-center`}
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: page.delay * 3 }}
+                      animate={{ 
+                        rotate: [0, 5, -5, 0],
+                        scale: [1, 1.1, 1]
+                      }}
+                      transition={{ 
+                        duration: 4, 
+                        repeat: Infinity, 
+                        delay: page.delay * 3 
+                      }}
                     >
-                      <page.icon className="text-white" size={18} />
+                      <motion.div
+                        animate={{
+                          rotate: [0, 360]
+                        }}
+                        transition={{
+                          duration: 8,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      >
+                        <page.icon className="text-white" size={18} />
+                      </motion.div>
                     </motion.div>
                     <h3 className={`text-xs font-bold mb-1 group-hover:text-${page.color}-600 transition-colors`}>
                       {page.label}
@@ -145,45 +171,6 @@ const PagePreviews = () => {
               </Link>
             </motion.div>
           ))}
-
-          {/* Premium Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: filteredPages.length * 0.05 }}
-          >
-            <motion.div
-              whileHover={{ y: -4, scale: 1.05 }}
-              animate={{ 
-                boxShadow: [
-                  '0 4px 15px rgba(99, 102, 241, 0.3)',
-                  '0 6px 20px rgba(168, 85, 247, 0.4)',
-                  '0 4px 15px rgba(99, 102, 241, 0.3)',
-                ]
-              }}
-              transition={{ 
-                boxShadow: { duration: 2, repeat: Infinity, delay: 1.5 },
-                hover: { duration: 0.2 }
-              }}
-              className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-xl p-3 text-center relative overflow-hidden cursor-default"
-            >
-              <div className="relative z-10">
-                <motion.div 
-                  className="w-10 h-10 mx-auto mb-2 bg-white/20 rounded-lg flex items-center justify-center backdrop-blur-sm"
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 10, -10, 0]
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <FiAward className="text-white" size={18} />
-                </motion.div>
-                <h3 className="text-xs font-bold mb-1 text-white">Premium</h3>
-                <p className="text-[10px] text-white/80">Quality</p>
-              </div>
-            </motion.div>
-          </motion.div>
         </div>
       </div>
     </section>
