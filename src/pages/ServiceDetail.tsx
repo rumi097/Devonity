@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { 
   FiCode, FiSmartphone, FiCloud, FiZap, FiArrowRight, 
-  FiCheckCircle, FiTrendingUp
+  FiCheckCircle, FiTrendingUp, FiMonitor,
+  FiDatabase, FiShield, FiPieChart, FiUsers, FiMessageSquare
 } from 'react-icons/fi';
 
 interface ServiceData {
@@ -179,8 +180,8 @@ const servicesData: Record<string, ServiceData> = {
       ]
     },
     pricing: {
-      starter: 'Starting from $5,000 for small business websites',
-      professional: 'From $15,000 for custom web applications',
+      starter: 'Starting from $500 for small business websites',
+      professional: 'From $2,000 for custom web applications',
       enterprise: 'Custom pricing for enterprise solutions - Contact us for a quote'
     }
   },
@@ -321,8 +322,8 @@ const servicesData: Record<string, ServiceData> = {
       ]
     },
     pricing: {
-      starter: 'Starting from $8,000 for simple mobile apps',
-      professional: 'From $25,000 for feature-rich applications',
+      starter: 'Starting from $500 for simple mobile apps',
+      professional: 'From $2,000 for feature-rich applications',
       enterprise: 'Custom pricing for enterprise apps - Contact us for consultation'
     }
   },
@@ -462,8 +463,8 @@ const servicesData: Record<string, ServiceData> = {
       ]
     },
     pricing: {
-      starter: 'Cloud consulting from $3,000',
-      professional: 'Migration projects from $20,000',
+      starter: 'Cloud consulting from $500',
+      professional: 'Migration projects from $2,000',
       enterprise: 'Enterprise cloud solutions - Custom pricing based on infrastructure size'
     }
   },
@@ -603,9 +604,1029 @@ const servicesData: Record<string, ServiceData> = {
       ]
     },
     pricing: {
-      starter: 'Simple automation from $2,000',
-      professional: 'Complex workflows from $8,000',
+      starter: 'Simple automation from $500',
+      professional: 'Complex workflows from $2,000',
       enterprise: 'Enterprise RPA solutions - Custom pricing based on scope'
+    }
+  },
+  'ui-ux-design': {
+    slug: 'ui-ux-design',
+    icon: FiMonitor,
+    title: 'UI/UX Design',
+    tagline: 'Creating Intuitive Experiences Users Love',
+    heroDescription: 'We design beautiful, user-friendly interfaces that combine aesthetics with functionality. Our design process is rooted in research and testing to ensure your users have the best possible experience.',
+    fullDescription: 'Great design is invisible. Our UI/UX team creates interfaces that feel natural and intuitive, allowing users to accomplish their goals effortlessly. We combine data-driven insights with creative excellence to deliver designs that not only look stunning but also drive conversions and user satisfaction.',
+    approach: [
+      {
+        title: 'User-Centered Design',
+        description: 'We put your users at the center of every design decision. Through research and testing, we understand their needs, behaviors, and pain points.'
+      },
+      {
+        title: 'Data-Driven Creativity',
+        description: 'Our designs are informed by analytics, user testing, and industry best practices while maintaining creative excellence and brand identity.'
+      },
+      {
+        title: 'Iterative Refinement',
+        description: 'We continuously test and refine designs based on user feedback and performance metrics to ensure optimal results.'
+      }
+    ],
+    whatWeOffer: [
+      'User research and persona development',
+      'Information architecture and user flow mapping',
+      'Wireframing and interactive prototyping',
+      'High-fidelity UI design and design systems',
+      'Mobile-first and responsive design',
+      'Usability testing and user feedback analysis',
+      'Accessibility compliance (WCAG 2.1)',
+      'Design handoff and developer collaboration',
+      'Post-launch optimization and iteration'
+    ],
+    howWeWork: [
+      {
+        phase: 'Phase 1',
+        title: 'Research & Discovery',
+        description: 'Understanding your users, business goals, and competitive landscape.',
+        deliverables: [
+          'User research and interviews',
+          'Persona development',
+          'Competitive analysis',
+          'User journey mapping',
+          'Design requirements documentation'
+        ]
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Information Architecture',
+        description: 'Structuring content and features for optimal user experience.',
+        deliverables: [
+          'Site maps and content hierarchy',
+          'User flow diagrams',
+          'Feature prioritization',
+          'Navigation structure',
+          'Content strategy'
+        ]
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Wireframing & Prototyping',
+        description: 'Creating low and high-fidelity representations of the interface.',
+        deliverables: [
+          'Low-fidelity wireframes',
+          'Interactive prototypes',
+          'User testing sessions',
+          'Iteration based on feedback',
+          'Finalized wireframes'
+        ]
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Visual Design',
+        description: 'Bringing wireframes to life with stunning visual design.',
+        deliverables: [
+          'Visual design exploration',
+          'Design system creation',
+          'High-fidelity mockups',
+          'Responsive design variations',
+          'Asset preparation'
+        ]
+      },
+      {
+        phase: 'Phase 5',
+        title: 'Testing & Handoff',
+        description: 'Ensuring design quality and smooth developer handoff.',
+        deliverables: [
+          'Usability testing',
+          'Accessibility audit',
+          'Design documentation',
+          'Developer handoff',
+          'Post-launch support'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'Design Tools',
+        items: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Principle', 'Framer']
+      },
+      {
+        category: 'Prototyping',
+        items: ['Figma', 'Protopie', 'Principle', 'After Effects', 'Lottie']
+      },
+      {
+        category: 'Research',
+        items: ['UserTesting', 'Hotjar', 'Google Analytics', 'Maze', 'Optimal Workshop']
+      },
+      {
+        category: 'Collaboration',
+        items: ['Figma', 'Miro', 'FigJam', 'Zeplin', 'Abstract']
+      }
+    ],
+    benefits: [
+      'Increased user satisfaction and engagement',
+      'Higher conversion rates and ROI',
+      'Reduced development time and costs',
+      'Improved brand perception and loyalty',
+      'Better accessibility and inclusivity',
+      'Data-driven design decisions'
+    ],
+    caseStudy: {
+      title: 'E-commerce Redesign Boosts Conversions by 145%',
+      challenge: 'An online retailer was experiencing high bounce rates and low conversion rates despite significant traffic. Users found the checkout process confusing and abandoned their carts.',
+      solution: 'We conducted extensive user research, redesigned the entire user experience with focus on simplified navigation and streamlined checkout, and implemented A/B testing to validate design decisions.',
+      results: [
+        '145% increase in conversion rate',
+        '62% reduction in cart abandonment',
+        '40% increase in average order value',
+        '3.5x improvement in mobile conversions',
+        '85% positive user feedback'
+      ]
+    },
+    pricing: {
+      starter: 'Landing page design from $500',
+      professional: 'Full website/app design from $2,000',
+      enterprise: 'Complex enterprise solutions - Custom pricing'
+    }
+  },
+  'database-management': {
+    slug: 'database-management',
+    icon: FiDatabase,
+    title: 'Database Design & Management',
+    tagline: 'Building Robust Data Foundations',
+    heroDescription: 'We design and manage efficient, scalable database solutions that ensure your data is secure, accessible, and optimized for performance. From schema design to query optimization, we handle it all.',
+    fullDescription: 'Your database is the foundation of your application. We create robust database architectures that scale with your business, optimize queries for lightning-fast performance, and implement security measures to protect your valuable data.',
+    approach: [
+      {
+        title: 'Performance-First Design',
+        description: 'We design database schemas with performance in mind, using indexing strategies, normalization, and partitioning to ensure fast queries even with large datasets.'
+      },
+      {
+        title: 'Security & Compliance',
+        description: 'We implement industry-standard security practices including encryption, access controls, and regular audits to protect your data and maintain compliance.'
+      },
+      {
+        title: 'Scalability Planning',
+        description: 'Our database solutions are designed to grow with your business, with strategies for horizontal and vertical scaling built in from day one.'
+      }
+    ],
+    whatWeOffer: [
+      'Database architecture and schema design',
+      'Query optimization and performance tuning',
+      'Database migration and data transfer',
+      'Backup and disaster recovery solutions',
+      'Database security and compliance',
+      'Replication and clustering setup',
+      'Monitoring and maintenance',
+      'Data modeling and normalization',
+      'Database auditing and reporting'
+    ],
+    howWeWork: [
+      {
+        phase: 'Phase 1',
+        title: 'Analysis & Planning',
+        description: 'Understanding your data requirements and access patterns.',
+        deliverables: [
+          'Data requirement analysis',
+          'Access pattern identification',
+          'Scalability planning',
+          'Technology selection',
+          'Security requirements'
+        ]
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Schema Design',
+        description: 'Creating efficient database structures.',
+        deliverables: [
+          'Entity-relationship diagrams',
+          'Normalized schema design',
+          'Index strategy',
+          'Constraint definition',
+          'Documentation'
+        ]
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Implementation',
+        description: 'Setting up and configuring your database.',
+        deliverables: [
+          'Database installation',
+          'Schema implementation',
+          'Data migration',
+          'Security configuration',
+          'Performance tuning'
+        ]
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Optimization',
+        description: 'Fine-tuning for optimal performance.',
+        deliverables: [
+          'Query optimization',
+          'Index optimization',
+          'Caching strategy',
+          'Load testing',
+          'Performance monitoring setup'
+        ]
+      },
+      {
+        phase: 'Phase 5',
+        title: 'Maintenance & Support',
+        description: 'Ongoing database management and optimization.',
+        deliverables: [
+          'Regular backups',
+          'Performance monitoring',
+          'Security updates',
+          'Capacity planning',
+          'Query optimization'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'Relational',
+        items: ['PostgreSQL', 'MySQL', 'MariaDB', 'SQL Server', 'Oracle']
+      },
+      {
+        category: 'NoSQL',
+        items: ['MongoDB', 'Cassandra', 'DynamoDB', 'Redis', 'Elasticsearch']
+      },
+      {
+        category: 'Tools',
+        items: ['pgAdmin', 'DataGrip', 'DBeaver', 'MongoDB Compass']
+      },
+      {
+        category: 'Cloud',
+        items: ['AWS RDS', 'Azure SQL', 'Google Cloud SQL', 'Atlas MongoDB']
+      }
+    ],
+    benefits: [
+      'Faster query performance and response times',
+      'Improved data integrity and consistency',
+      'Enhanced security and compliance',
+      'Reduced storage costs through optimization',
+      'Better scalability as your data grows',
+      'Automated backup and recovery'
+    ],
+    pricing: {
+      starter: 'Small database setup from $500',
+      professional: 'Enterprise database from $2,000',
+      enterprise: 'Complex distributed systems - Custom pricing'
+    }
+  },
+  'cybersecurity': {
+    slug: 'cybersecurity',
+    icon: FiShield,
+    title: 'Cybersecurity Solutions',
+    tagline: 'Protecting Your Digital Assets',
+    heroDescription: 'Comprehensive security services to protect your applications, data, and infrastructure from cyber threats. We implement industry-leading security practices and provide ongoing monitoring to keep you safe.',
+    fullDescription: 'In today\'s digital landscape, security is not optional. We provide end-to-end cybersecurity solutions that protect your business from evolving threats. From security audits to penetration testing, we help you identify vulnerabilities and implement robust defenses.',
+    approach: [
+      {
+        title: 'Proactive Defense',
+        description: 'We don\'t wait for attacks to happen. Our proactive approach identifies and fixes vulnerabilities before they can be exploited.'
+      },
+      {
+        title: 'Compliance-Focused',
+        description: 'We ensure your security measures meet industry standards and regulatory requirements including GDPR, HIPAA, and PCI DSS.'
+      },
+      {
+        title: 'Continuous Monitoring',
+        description: 'Security is an ongoing process. We provide 24/7 monitoring and rapid response to potential threats.'
+      }
+    ],
+    whatWeOffer: [
+      'Security audits and vulnerability assessments',
+      'Penetration testing and ethical hacking',
+      'SSL/TLS certificate implementation',
+      'Firewall and network security configuration',
+      'Authentication and authorization systems',
+      'Data encryption and protection',
+      'GDPR and compliance consulting',
+      'Security training for your team',
+      'Incident response and recovery'
+    ],
+    howWeWork: [
+      {
+        phase: 'Phase 1',
+        title: 'Security Assessment',
+        description: 'Comprehensive evaluation of your current security posture.',
+        deliverables: [
+          'Security audit report',
+          'Vulnerability assessment',
+          'Risk analysis',
+          'Compliance gap analysis',
+          'Prioritized recommendations'
+        ]
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Penetration Testing',
+        description: 'Ethical hacking to identify exploitable vulnerabilities.',
+        deliverables: [
+          'Network penetration testing',
+          'Web application testing',
+          'API security testing',
+          'Social engineering assessment',
+          'Detailed findings report'
+        ]
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Implementation',
+        description: 'Deploying security measures and fixes.',
+        deliverables: [
+          'Security patch deployment',
+          'Firewall configuration',
+          'Authentication system setup',
+          'Encryption implementation',
+          'Access control configuration'
+        ]
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Training & Documentation',
+        description: 'Empowering your team with security knowledge.',
+        deliverables: [
+          'Security awareness training',
+          'Best practices documentation',
+          'Incident response procedures',
+          'Security policy development',
+          'Compliance documentation'
+        ]
+      },
+      {
+        phase: 'Phase 5',
+        title: 'Monitoring & Maintenance',
+        description: 'Ongoing security management and threat detection.',
+        deliverables: [
+          '24/7 security monitoring',
+          'Regular security updates',
+          'Quarterly security audits',
+          'Incident response',
+          'Compliance reporting'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'Security Tools',
+        items: ['OWASP ZAP', 'Burp Suite', 'Metasploit', 'Nmap', 'Wireshark']
+      },
+      {
+        category: 'Authentication',
+        items: ['OAuth 2.0', 'JWT', 'Auth0', 'Okta', 'Keycloak']
+      },
+      {
+        category: 'Encryption',
+        items: ['AES', 'RSA', 'TLS/SSL', 'Let\'s Encrypt', 'HashiCorp Vault']
+      },
+      {
+        category: 'Monitoring',
+        items: ['Splunk', 'ELK Stack', 'Snort', 'Fail2ban', 'CloudFlare']
+      }
+    ],
+    benefits: [
+      'Protection from cyber attacks and data breaches',
+      'Compliance with industry regulations',
+      'Enhanced customer trust and confidence',
+      'Reduced risk of financial losses',
+      'Improved incident response capabilities',
+      'Peace of mind for stakeholders'
+    ],
+    pricing: {
+      starter: 'Security audit from $500',
+      professional: 'Comprehensive security from $2,000',
+      enterprise: 'Enterprise security solutions - Custom pricing'
+    }
+  },
+  'performance-optimization': {
+    slug: 'performance-optimization',
+    icon: FiZap,
+    title: 'Performance Optimization',
+    tagline: 'Making Your Applications Lightning Fast',
+    heroDescription: 'Speed is crucial for user experience and SEO. We optimize every aspect of your application to ensure fast load times, smooth interactions, and excellent performance across all devices.',
+    fullDescription: 'Studies show that users abandon slow websites within seconds. We analyze and optimize your application\'s performance, from frontend loading times to backend query optimization, ensuring your users have a seamless experience.',
+    approach: [
+      {
+        title: 'Holistic Optimization',
+        description: 'We optimize every layer of your application - frontend, backend, database, and infrastructure - for maximum performance gains.'
+      },
+      {
+        title: 'Data-Driven Improvements',
+        description: 'Using real-world metrics and performance testing, we identify bottlenecks and prioritize optimizations for maximum impact.'
+      },
+      {
+        title: 'Sustainable Performance',
+        description: 'We implement monitoring and best practices to ensure your application stays fast as it grows and evolves.'
+      }
+    ],
+    whatWeOffer: [
+      'Frontend performance optimization',
+      'Backend and API optimization',
+      'Database query optimization',
+      'CDN integration and configuration',
+      'Caching strategy implementation',
+      'Image and asset optimization',
+      'Code splitting and lazy loading',
+      'Load testing and stress testing',
+      'Performance monitoring setup'
+    ],
+    howWeWork: [
+      {
+        phase: 'Phase 1',
+        title: 'Performance Audit',
+        description: 'Comprehensive analysis of current performance.',
+        deliverables: [
+          'Lighthouse audit report',
+          'Load time analysis',
+          'Backend profiling',
+          'Database query analysis',
+          'Bottleneck identification'
+        ]
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Frontend Optimization',
+        description: 'Optimizing client-side performance.',
+        deliverables: [
+          'Code minification and bundling',
+          'Image optimization',
+          'Lazy loading implementation',
+          'Critical CSS extraction',
+          'Browser caching setup'
+        ]
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Backend Optimization',
+        description: 'Improving server-side performance.',
+        deliverables: [
+          'API response optimization',
+          'Database query optimization',
+          'Server-side caching',
+          'Resource pooling',
+          'Load balancing setup'
+        ]
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Infrastructure Optimization',
+        description: 'Optimizing hosting and delivery.',
+        deliverables: [
+          'CDN configuration',
+          'Server optimization',
+          'Compression setup',
+          'HTTP/2 implementation',
+          'SSL optimization'
+        ]
+      },
+      {
+        phase: 'Phase 5',
+        title: 'Testing & Monitoring',
+        description: 'Validating improvements and ongoing monitoring.',
+        deliverables: [
+          'Load testing',
+          'Performance benchmarks',
+          'Monitoring dashboard',
+          'Alert configuration',
+          'Documentation'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'Frontend',
+        items: ['Webpack', 'Vite', 'Next.js', 'React Query', 'Service Workers']
+      },
+      {
+        category: 'Caching',
+        items: ['Redis', 'Memcached', 'Varnish', 'CDN', 'Browser Cache']
+      },
+      {
+        category: 'Testing',
+        items: ['Lighthouse', 'GTmetrix', 'WebPageTest', 'JMeter', 'k6']
+      },
+      {
+        category: 'Monitoring',
+        items: ['New Relic', 'Datadog', 'Sentry', 'Google Analytics', 'CloudWatch']
+      }
+    ],
+    benefits: [
+      'Improved user experience and satisfaction',
+      'Better SEO rankings and visibility',
+      'Higher conversion rates',
+      'Reduced server costs',
+      'Faster page load times',
+      'Better mobile performance'
+    ],
+    pricing: {
+      starter: 'Basic optimization from $500',
+      professional: 'Comprehensive optimization from $2,000',
+      enterprise: 'Enterprise-scale optimization - Custom pricing'
+    }
+  },
+  'analytics': {
+    slug: 'analytics',
+    icon: FiPieChart,
+    title: 'Analytics & Business Intelligence',
+    tagline: 'Data-Driven Insights for Better Decisions',
+    heroDescription: 'Transform your data into actionable insights. We implement analytics solutions and create custom dashboards that help you understand your users, optimize performance, and drive growth.',
+    fullDescription: 'Data is only valuable if you can understand and act on it. We help you collect, analyze, and visualize your data to uncover insights that drive better business decisions and improve user experiences.',
+    approach: [
+      {
+        title: 'Goal-Oriented Analytics',
+        description: 'We start with your business goals and design analytics solutions that provide the insights you need to achieve them.'
+      },
+      {
+        title: 'Actionable Insights',
+        description: 'We focus on metrics that matter and present data in ways that make it easy to identify opportunities and make decisions.'
+      },
+      {
+        title: 'Privacy-Focused',
+        description: 'We implement analytics in compliance with privacy regulations while still providing the insights you need.'
+      }
+    ],
+    whatWeOffer: [
+      'Google Analytics 4 setup and configuration',
+      'Custom dashboard development',
+      'Data visualization and reporting',
+      'A/B testing implementation',
+      'Conversion rate optimization',
+      'User behavior tracking',
+      'Event tracking setup',
+      'E-commerce analytics',
+      'Custom reporting and alerts'
+    ],
+    howWeWork: [
+      {
+        phase: 'Phase 1',
+        title: 'Strategy & Planning',
+        description: 'Defining what to measure and why.',
+        deliverables: [
+          'Analytics strategy document',
+          'KPI definition',
+          'Tracking plan',
+          'Goal configuration',
+          'Measurement framework'
+        ]
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Implementation',
+        description: 'Setting up tracking and data collection.',
+        deliverables: [
+          'Analytics tool configuration',
+          'Event tracking setup',
+          'Conversion tracking',
+          'E-commerce tracking',
+          'Custom dimension setup'
+        ]
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Dashboard Creation',
+        description: 'Building custom dashboards for your needs.',
+        deliverables: [
+          'Executive dashboard',
+          'Marketing dashboard',
+          'Product analytics',
+          'Custom reports',
+          'Automated reporting'
+        ]
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Optimization',
+        description: 'Using data to improve performance.',
+        deliverables: [
+          'A/B test implementation',
+          'Funnel analysis',
+          'User journey optimization',
+          'Conversion rate improvements',
+          'Recommendations'
+        ]
+      },
+      {
+        phase: 'Phase 5',
+        title: 'Training & Support',
+        description: 'Empowering your team to use analytics.',
+        deliverables: [
+          'Team training sessions',
+          'Documentation',
+          'Best practices guide',
+          'Ongoing support',
+          'Monthly insights reports'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'Analytics Platforms',
+        items: ['Google Analytics 4', 'Mixpanel', 'Amplitude', 'Segment', 'Heap']
+      },
+      {
+        category: 'Visualization',
+        items: ['Tableau', 'Power BI', 'Looker', 'D3.js', 'Chart.js']
+      },
+      {
+        category: 'A/B Testing',
+        items: ['Google Optimize', 'Optimizely', 'VWO', 'Statsig']
+      },
+      {
+        category: 'Tools',
+        items: ['Google Tag Manager', 'Hotjar', 'FullStory', 'Microsoft Clarity']
+      }
+    ],
+    benefits: [
+      'Better understanding of user behavior',
+      'Data-driven decision making',
+      'Improved conversion rates',
+      'Faster identification of issues',
+      'Better ROI tracking',
+      'Competitive insights'
+    ],
+    pricing: {
+      starter: 'Analytics setup from $500',
+      professional: 'Custom analytics from $2,000',
+      enterprise: 'Enterprise BI solutions - Custom pricing'
+    }
+  },
+  'dedicated-teams': {
+    slug: 'dedicated-teams',
+    icon: FiUsers,
+    title: 'Dedicated Development Teams',
+    tagline: 'Your Extended Development Team',
+    heroDescription: 'Scale your development capacity with our skilled developers who work as an extension of your in-house team. Get the expertise you need, when you need it, with full transparency and control.',
+    fullDescription: 'Building a great product requires the right team. We provide dedicated developers who integrate seamlessly with your existing team, follow your processes, and are committed to your success. Whether you need a single specialist or an entire team, we have the talent you need.',
+    approach: [
+      {
+        title: 'Seamless Integration',
+        description: 'Our developers integrate directly with your team, using your tools, processes, and communication channels for smooth collaboration.'
+      },
+      {
+        title: 'Full Transparency',
+        description: 'You have complete visibility into what our developers are working on, with daily standups, regular reports, and direct communication.'
+      },
+      {
+        title: 'Flexible Engagement',
+        description: 'Scale up or down as needed, with flexible contracts that adapt to your changing requirements and project phases.'
+      }
+    ],
+    whatWeOffer: [
+      'Full-stack developers',
+      'Frontend specialists (React, Vue, Angular)',
+      'Backend developers (Node.js, Python, PHP)',
+      'Mobile developers (iOS, Android, React Native)',
+      'DevOps engineers',
+      'UI/UX designers',
+      'QA engineers and testers',
+      'Project managers',
+      'Technical architects'
+    ],
+    howWeWork: [
+      {
+        phase: 'Phase 1',
+        title: 'Discovery & Planning',
+        description: 'Understanding your needs and finding the right fit.',
+        deliverables: [
+          'Requirements analysis',
+          'Skill assessment',
+          'Team composition planning',
+          'Timeline and budget proposal',
+          'Engagement model selection'
+        ]
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Team Assembly',
+        description: 'Selecting and onboarding the right developers.',
+        deliverables: [
+          'Developer profiles and resumes',
+          'Technical interviews',
+          'Team selection',
+          'Contract finalization',
+          'Onboarding plan'
+        ]
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Onboarding',
+        description: 'Getting your team up to speed.',
+        deliverables: [
+          'Access setup',
+          'Process training',
+          'Codebase familiarization',
+          'Tool configuration',
+          'Team introduction'
+        ]
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Development',
+        description: 'Active development and collaboration.',
+        deliverables: [
+          'Sprint planning',
+          'Daily standups',
+          'Code development',
+          'Code reviews',
+          'Regular progress reports'
+        ]
+      },
+      {
+        phase: 'Phase 5',
+        title: 'Ongoing Support',
+        description: 'Continuous collaboration and optimization.',
+        deliverables: [
+          'Performance reviews',
+          'Team optimization',
+          'Knowledge transfer',
+          'Process improvements',
+          'Flexible scaling'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'Frontend',
+        items: ['React', 'Vue.js', 'Angular', 'Next.js', 'TypeScript']
+      },
+      {
+        category: 'Backend',
+        items: ['Node.js', 'Python', 'PHP', 'Java', '.NET', 'Go']
+      },
+      {
+        category: 'Mobile',
+        items: ['React Native', 'Flutter', 'Swift', 'Kotlin']
+      },
+      {
+        category: 'Tools',
+        items: ['Git', 'Jira', 'Slack', 'Azure DevOps', 'GitHub']
+      }
+    ],
+    benefits: [
+      'Quick scaling without hiring overhead',
+      'Access to specialized expertise',
+      'Reduced development costs',
+      'Faster time to market',
+      'Flexible resource allocation',
+      'Focus on core business activities'
+    ],
+    pricing: {
+      starter: 'Junior developer from $500/month',
+      professional: 'Senior developer from $2,000/month',
+      enterprise: 'Full dedicated team - Custom pricing based on composition'
+    }
+  },
+  'digital-marketing': {
+    slug: 'digital-marketing',
+    icon: FiTrendingUp,
+    title: 'Digital Marketing Tech',
+    tagline: 'Technology Solutions for Marketing Success',
+    heroDescription: 'Bridge the gap between technology and marketing. We implement technical solutions that power your digital marketing efforts, from SEO optimization to marketing automation.',
+    fullDescription: 'Modern digital marketing requires technical expertise. We provide the technology infrastructure that enables effective marketing campaigns, from SEO-optimized websites to sophisticated marketing automation systems.',
+    approach: [
+      {
+        title: 'Technical SEO Excellence',
+        description: 'We optimize your technical infrastructure for search engines, ensuring fast load times, proper indexing, and schema markup.'
+      },
+      {
+        title: 'Marketing Automation',
+        description: 'We implement systems that automate repetitive marketing tasks, allowing your team to focus on strategy and creativity.'
+      },
+      {
+        title: 'Data Integration',
+        description: 'We connect your marketing tools with your CRM and analytics platforms for a complete view of your marketing performance.'
+      }
+    ],
+    whatWeOffer: [
+      'Technical SEO optimization',
+      'Marketing automation setup',
+      'CRM integration and customization',
+      'Email marketing system implementation',
+      'Landing page optimization',
+      'Social media integration',
+      'Conversion tracking setup',
+      'Marketing dashboard creation',
+      'Lead generation tools'
+    ],
+    howWeWork: [
+      {
+        phase: 'Phase 1',
+        title: 'Marketing Tech Audit',
+        description: 'Assessing your current marketing technology.',
+        deliverables: [
+          'Technology stack review',
+          'SEO technical audit',
+          'Integration assessment',
+          'Gap analysis',
+          'Recommendations'
+        ]
+      },
+      {
+        phase: 'Phase 2',
+        title: 'SEO Optimization',
+        description: 'Implementing technical SEO improvements.',
+        deliverables: [
+          'Site speed optimization',
+          'Mobile optimization',
+          'Schema markup',
+          'XML sitemap',
+          'Robots.txt optimization'
+        ]
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Automation Setup',
+        description: 'Implementing marketing automation tools.',
+        deliverables: [
+          'Email automation setup',
+          'Workflow automation',
+          'Lead scoring',
+          'Campaign automation',
+          'Integration setup'
+        ]
+      },
+      {
+        phase: 'Phase 4',
+        title: 'CRM Integration',
+        description: 'Connecting your marketing tools with CRM.',
+        deliverables: [
+          'CRM configuration',
+          'Data synchronization',
+          'Custom fields setup',
+          'Pipeline automation',
+          'Reporting setup'
+        ]
+      },
+      {
+        phase: 'Phase 5',
+        title: 'Training & Optimization',
+        description: 'Empowering your team and optimizing performance.',
+        deliverables: [
+          'Team training',
+          'Documentation',
+          'Performance monitoring',
+          'A/B testing setup',
+          'Ongoing optimization'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'SEO Tools',
+        items: ['Google Search Console', 'SEMrush', 'Ahrefs', 'Screaming Frog']
+      },
+      {
+        category: 'Marketing Automation',
+        items: ['HubSpot', 'Marketo', 'ActiveCampaign', 'Mailchimp', 'Klaviyo']
+      },
+      {
+        category: 'CRM',
+        items: ['Salesforce', 'HubSpot CRM', 'Pipedrive', 'Zoho CRM']
+      },
+      {
+        category: 'Analytics',
+        items: ['Google Analytics', 'Google Tag Manager', 'Hotjar', 'Mixpanel']
+      }
+    ],
+    benefits: [
+      'Improved search engine rankings',
+      'Automated marketing workflows',
+      'Better lead quality and conversion',
+      'Integrated marketing and sales data',
+      'Reduced manual marketing tasks',
+      'Better ROI tracking'
+    ],
+    pricing: {
+      starter: 'SEO optimization from $500',
+      professional: 'Marketing automation from $2,000',
+      enterprise: 'Complete marketing tech stack - Custom pricing'
+    }
+  },
+  'support-maintenance': {
+    slug: 'support-maintenance',
+    icon: FiMessageSquare,
+    title: 'Support & Maintenance',
+    tagline: 'Always Here When You Need Us',
+    heroDescription: 'Keep your applications running smoothly with our 24/7 technical support and maintenance services. We proactively monitor, update, and optimize your systems to prevent issues before they impact your users.',
+    fullDescription: 'Launching your application is just the beginning. We provide ongoing support and maintenance to ensure your systems stay secure, performant, and up-to-date. Our team is available 24/7 to handle issues, implement updates, and keep everything running smoothly.',
+    approach: [
+      {
+        title: 'Proactive Monitoring',
+        description: 'We monitor your systems 24/7, identifying and fixing issues before they impact your users or business operations.'
+      },
+      {
+        title: 'Rapid Response',
+        description: 'When issues occur, our team responds immediately with clear communication and quick resolution to minimize downtime.'
+      },
+      {
+        title: 'Continuous Improvement',
+        description: 'We don\'t just maintain - we continuously optimize and improve your systems based on performance data and user feedback.'
+      }
+    ],
+    whatWeOffer: [
+      '24/7 technical support',
+      'Proactive system monitoring',
+      'Regular security updates and patches',
+      'Performance monitoring and optimization',
+      'Bug fixes and issue resolution',
+      'Content updates and changes',
+      'Backup and disaster recovery',
+      'Server maintenance',
+      'Uptime guarantees (SLA)'
+    ],
+    howWeWork: [
+      {
+        phase: 'Phase 1',
+        title: 'Onboarding',
+        description: 'Getting familiar with your systems.',
+        deliverables: [
+          'System documentation review',
+          'Access setup',
+          'Monitoring configuration',
+          'SLA definition',
+          'Communication protocols'
+        ]
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Monitoring Setup',
+        description: 'Implementing comprehensive monitoring.',
+        deliverables: [
+          'Server monitoring',
+          'Application monitoring',
+          'Error tracking',
+          'Performance monitoring',
+          'Alert configuration'
+        ]
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Regular Maintenance',
+        description: 'Scheduled maintenance and updates.',
+        deliverables: [
+          'Security patches',
+          'Software updates',
+          'Database optimization',
+          'Backup verification',
+          'Performance tuning'
+        ]
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Issue Resolution',
+        description: 'Rapid response to incidents.',
+        deliverables: [
+          'Issue triage',
+          'Root cause analysis',
+          'Fix implementation',
+          'Testing and verification',
+          'Incident reports'
+        ]
+      },
+      {
+        phase: 'Phase 5',
+        title: 'Optimization',
+        description: 'Continuous improvement of systems.',
+        deliverables: [
+          'Performance analysis',
+          'Optimization recommendations',
+          'Capacity planning',
+          'Monthly reports',
+          'Strategy sessions'
+        ]
+      }
+    ],
+    technologies: [
+      {
+        category: 'Monitoring',
+        items: ['New Relic', 'Datadog', 'Sentry', 'UptimeRobot', 'Pingdom']
+      },
+      {
+        category: 'Ticketing',
+        items: ['Jira Service Desk', 'Zendesk', 'Freshdesk', 'ServiceNow']
+      },
+      {
+        category: 'Communication',
+        items: ['Slack', 'PagerDuty', 'Microsoft Teams', 'Email']
+      },
+      {
+        category: 'Tools',
+        items: ['Git', 'Docker', 'CI/CD', 'Backup Solutions']
+      }
+    ],
+    benefits: [
+      'Maximum uptime and reliability',
+      'Faster issue resolution',
+      'Improved security posture',
+      'Better performance over time',
+      'Peace of mind',
+      'Focus on your core business'
+    ],
+    pricing: {
+      starter: 'Basic support from $500/month',
+      professional: '24/7 support from $2,000/month',
+      enterprise: 'Enterprise SLA packages - Custom pricing'
     }
   }
 };
@@ -654,8 +1675,8 @@ const ServiceDetail = () => {
                 <ServiceIcon className="text-white" size={40} />
               </motion.div>
               <div>
-                <h1 className="text-5xl font-display font-bold mb-2">{service.title}</h1>
-                <p className="text-2xl text-primary-100">{service.tagline}</p>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-2 break-words">{service.title}</h1>
+                <p className="text-lg sm:text-xl md:text-2xl text-primary-100 break-words">{service.tagline}</p>
               </div>
             </div>
             
@@ -716,7 +1737,7 @@ const ServiceDetail = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">What We Offer</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 break-words">What We Offer</h2>
             <p className="text-xl text-gray-600">Comprehensive solutions tailored to your needs</p>
           </motion.div>
 
@@ -747,35 +1768,57 @@ const ServiceDetail = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">How We Work</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 break-words">How We Work</h2>
             <p className="text-xl text-gray-600">Our proven process for delivering excellence</p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             {service.howWeWork.map((phase, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="card p-8"
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+                className="card p-6 relative overflow-hidden group"
               >
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-gradient-to-r from-primary-600 to-accent-600 rounded-xl flex items-center justify-center text-white font-bold text-lg">
-                      {phase.phase}
+                {/* Animated background gradient */}
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-r from-primary-50 to-accent-50 opacity-0 group-hover:opacity-100"
+                  transition={{ duration: 0.3 }}
+                />
+                
+                <div className="flex items-start gap-4 relative z-10">
+                  <motion.div 
+                    className="flex-shrink-0"
+                    whileHover={{ rotate: 5, scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg flex flex-col items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-shadow">
+                      <span className="text-xs font-semibold opacity-80">Phase</span>
+                      <span className="text-xl font-bold leading-none">{index + 1}</span>
                     </div>
-                  </div>
+                  </motion.div>
                   <div className="flex-grow">
-                    <h3 className="text-2xl font-bold mb-2">{phase.title}</h3>
-                    <p className="text-gray-600 mb-4">{phase.description}</p>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary-700 transition-colors">{phase.title}</h3>
+                    <p className="text-gray-600 text-sm mb-3">{phase.description}</p>
                     <div className="grid md:grid-cols-2 gap-2">
                       {phase.deliverables.map((deliverable, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
+                        <motion.div 
+                          key={idx} 
+                          className="flex items-center gap-2"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1 + idx * 0.05 }}
+                        >
+                          <motion.div 
+                            className="w-1.5 h-1.5 bg-primary-600 rounded-full"
+                            whileHover={{ scale: 1.5 }}
+                          ></motion.div>
                           <span className="text-sm text-gray-700">{deliverable}</span>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
@@ -795,7 +1838,7 @@ const ServiceDetail = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Technologies We Use</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 break-words">Technologies We Use</h2>
             <p className="text-xl text-gray-600">Cutting-edge tools and frameworks</p>
           </motion.div>
 
@@ -835,7 +1878,7 @@ const ServiceDetail = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Key Benefits</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 break-words">Key Benefits</h2>
             <p className="text-xl text-gray-600">Value delivered to your business</p>
           </motion.div>
 
@@ -925,7 +1968,7 @@ const ServiceDetail = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Investment & Pricing</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 break-words">Investment & Pricing</h2>
             <p className="text-xl text-gray-600">Transparent pricing for quality service</p>
           </motion.div>
 
@@ -974,7 +2017,7 @@ const ServiceDetail = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-          <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 break-words">Ready to Get Started?</h2>
           <p className="text-xl text-gray-600 mb-8">
             Let's discuss your project and create something amazing together
           </p>

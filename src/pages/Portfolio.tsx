@@ -87,18 +87,41 @@ const Portfolio = () => {
   return (
     <div className="page-transition pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-accent-600 text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-r from-primary-600 to-accent-600 text-white py-12 sm:py-16 md:py-24 relative overflow-hidden">
+        {/* Animated grid pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full">
+            <defs>
+              <pattern id="portfolio-grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                <motion.rect width="48" height="48" fill="none" stroke="white" strokeWidth="1" animate={{ opacity: [0.3, 0.7, 0.3] }} transition={{ duration: 3, repeat: Infinity }} />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#portfolio-grid)" />
+          </svg>
+        </div>
+        
+        {/* Floating squares */}
+        <motion.div className="absolute top-20 left-10 w-20 h-20 border-2 border-white opacity-20 rounded-lg" animate={{ rotate: [0, 180, 360], y: [-10, 10, -10] }} transition={{ duration: 8, repeat: Infinity }} />
+        <motion.div className="absolute top-10 right-20 w-16 h-16 border-2 border-white opacity-30 rounded-lg" animate={{ rotate: [360, 180, 0], y: [10, -10, 10] }} transition={{ duration: 7, repeat: Infinity }} />
+        <motion.div className="absolute bottom-20 left-1/3 w-24 h-24 border-2 border-white opacity-15 rounded-lg" animate={{ rotate: [0, -180, -360], y: [-15, 15, -15] }} transition={{ duration: 9, repeat: Infinity }} />
+        <motion.div className="absolute bottom-10 right-1/4 w-18 h-18 border-2 border-white opacity-25 rounded-lg" animate={{ rotate: [180, 0, 180], y: [12, -12, 12] }} transition={{ duration: 6, repeat: Infinity }} />
+        
+        {/* Image frame animations */}
+        <motion.div className="absolute top-1/4 right-10" animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 4, repeat: Infinity }}>
+          <FiExternalLink className="text-white" size={40} />
+        </motion.div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 break-words">
               Our Portfolio
             </h1>
             <p className="text-xl text-primary-100 max-w-3xl mx-auto">
-              Showcasing successful projects that have transformed businesses
+              Showcasing our best work and successful client projects
             </p>
           </motion.div>
         </div>
@@ -126,9 +149,9 @@ const Portfolio = () => {
       </section>
 
       {/* Portfolio Grid */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={index}
@@ -188,7 +211,7 @@ const Portfolio = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-primary-600 to-accent-600 text-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-r from-primary-600 to-accent-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
             Let's Build Your Success Story

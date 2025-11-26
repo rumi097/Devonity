@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
-import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
+import { HiMail, HiLocationMarker } from 'react-icons/hi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,19 +10,19 @@ const Footer = () => {
       { label: 'About Us', path: '/about' },
       { label: 'Services', path: '/services' },
       { label: 'Portfolio', path: '/portfolio' },
-      { label: 'Careers', path: '/contact' },
+      { label: 'Get Started', path: '/contact' },
     ],
     services: [
-      { label: 'Web Development', path: '/services' },
-      { label: 'Mobile Apps', path: '/services' },
-      { label: 'Cloud Solutions', path: '/services' },
-      { label: 'UI/UX Design', path: '/services' },
+      { label: 'Web Development', path: '/services/web-development' },
+      { label: 'Mobile Apps', path: '/services/mobile-apps' },
+      { label: 'Cloud Solutions', path: '/services/cloud-solutions' },
+      { label: 'UI/UX Design', path: '/services/uiux-design' },
     ],
     resources: [
       { label: 'Blog', path: '/blog' },
       { label: 'Case Studies', path: '/portfolio' },
       { label: 'Contact', path: '/contact' },
-      { label: 'Support', path: '/contact' },
+      { label: 'Support', path: 'mailto:devonitytechnologiesltd@gmail.com', isExternal: true },
     ],
   };
 
@@ -54,16 +54,21 @@ const Footer = () => {
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <HiMail className="text-primary-500" size={20} />
-                <span>info@devonity.com</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <HiPhone className="text-primary-500" size={20} />
-                <span>+1 (555) 123-4567</span>
+                <HiMail className="text-primary-500 flex-shrink-0" size={20} />
+                <a href="mailto:devonitytechnologiesltd@gmail.com" className="hover:text-primary-400 transition-colors break-all text-sm sm:text-base">
+                  devonitytechnologiesltd@gmail.com
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <HiLocationMarker className="text-primary-500" size={20} />
-                <span>123 Tech Street, San Francisco, CA</span>
+                <a 
+                  href="https://maps.app.goo.gl/QpJQNRX1gCb3fPUk7" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary-400 transition-colors"
+                >
+                  Rajshahi, Bangladesh
+                </a>
               </div>
             </div>
           </div>
@@ -102,9 +107,15 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.path} className="hover:text-primary-400 transition-colors">
-                    {link.label}
-                  </Link>
+                  {link.isExternal ? (
+                    <a href={link.path} className="hover:text-primary-400 transition-colors">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link to={link.path} className="hover:text-primary-400 transition-colors">
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

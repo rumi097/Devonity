@@ -28,19 +28,79 @@ const About = () => {
   return (
     <div className="page-transition pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-accent-600 text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-gray-900 via-primary-900 to-accent-900 text-white py-32 relative overflow-hidden">
+        {/* Animated particles background */}
+        <svg className="absolute inset-0 w-full h-full">
+          {[...Array(30)].map((_, i) => (
+            <motion.circle
+              key={i}
+              cx={`${Math.random() * 100}%`}
+              cy={`${Math.random() * 100}%`}
+              r={Math.random() * 3 + 1}
+              fill="rgba(255,255,255,0.4)"
+              animate={{
+                y: [0, -30, 0],
+                x: [0, Math.random() * 20 - 10, 0],
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1]
+              }}
+              transition={{
+                duration: Math.random() * 5 + 3,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </svg>
+        
+        {/* Floating geometric shapes */}
+        <motion.div
+          className="absolute top-20 left-10 w-32 h-32 border-4 border-primary-400 opacity-20 rounded-lg"
+          animate={{ rotate: 360, scale: [1, 1.2, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-20 w-40 h-40 border-4 border-accent-400 opacity-20"
+          style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
+          animate={{ rotate: -360, scale: [1, 1.3, 1] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-1/4 w-24 h-24 border-4 border-blue-400 opacity-20 rounded-full"
+          animate={{ y: [-20, 20, -20], x: [-10, 10, -10] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 overflow-hidden">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-display font-bold mb-6">
+            <motion.h1
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 break-words"
+              animate={{ 
+                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              }}
+              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+              style={{
+                background: "linear-gradient(90deg, #fff, #60a5fa, #c084fc, #fff)",
+                backgroundSize: "200% auto",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
               About Devonity Technologies
-            </h1>
-            <p className="text-xl text-primary-100 max-w-3xl mx-auto">
+            </motion.h1>
+            <motion.p
+              className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto break-words"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
               Passionate innovators delivering excellence in every project
-            </p>
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -77,7 +137,7 @@ const About = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-24 gradient-bg">
+      <section className="py-12 sm:py-16 md:py-24 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title">Our Core Values</h2>
@@ -86,11 +146,11 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="card p-8 text-center"
+                className="card p-4 sm:p-6 md:p-8 text-center"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -120,7 +180,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 title: 'Expert Team',
@@ -224,44 +284,200 @@ const About = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-24 bg-gradient-to-r from-primary-600 to-accent-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-primary-900 to-gray-900 text-white relative overflow-hidden">
+        {/* Animated grid pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }} />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
             {[
-              { number: '100%', label: 'Client Satisfaction' },
-              { number: '24/7', label: 'Support Available' },
-              { number: 'Latest', label: 'Tech Stack' },
-              { number: 'Agile', label: 'Methodology' },
+              { number: '24/7', label: 'Support Available', icon: '🔄' },
+              { number: 'Latest', label: 'Tech Stack', icon: '⚡' },
+              { number: 'Agile', label: 'Methodology', icon: '🚀' },
+              { number: '100+', label: 'Projects Delivered', icon: '✨' },
             ].map((stat, index) => (
-              <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-primary-100">{stat.label}</div>
-              </div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -10 }}
+                className="relative group"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-primary-600/20 to-accent-600/20 rounded-2xl blur-xl"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0.8, 0.5]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, delay: index * 0.2 }}
+                />
+                <div className="relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:border-primary-500 transition-all duration-300">
+                  <motion.div
+                    className="text-5xl mb-3"
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
+                  >
+                    {stat.icon}
+                  </motion.div>
+                  <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent">
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-300 font-medium">{stat.label}</div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute top-0 left-0 w-96 h-96 bg-primary-200 rounded-full filter blur-3xl opacity-20"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-0 w-96 h-96 bg-accent-200 rounded-full filter blur-3xl opacity-20"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.3, 1]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="card p-12" data-aos="fade-right">
-              <h3 className="text-3xl font-bold mb-6 text-gradient">Our Mission</h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                To empower businesses worldwide with innovative technology solutions that drive growth, 
-                enhance efficiency, and create lasting value. We are committed to delivering excellence 
-                in every project while building meaningful partnerships with our clients.
-              </p>
-            </div>
-            <div className="card p-12" data-aos="fade-left">
-              <h3 className="text-3xl font-bold mb-6 text-gradient">Our Vision</h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                To be the global leader in digital transformation, recognized for our innovation, 
-                quality, and commitment to client success. We envision a future where technology 
-                seamlessly integrates with business to unlock unlimited potential.
-              </p>
-            </div>
+            {/* Mission */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative group"
+            >
+              <motion.div
+                className="absolute -inset-4 bg-gradient-to-r from-primary-600 to-accent-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"
+                animate={{
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+              <div className="relative bg-white/80 backdrop-blur-sm border-2 border-gray-200 group-hover:border-primary-400 rounded-3xl p-6 sm:p-8 md:p-12 shadow-xl transition-all duration-500">
+                <motion.div
+                  className="flex items-center gap-4 mb-6"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <motion.div
+                    className="w-16 h-16 bg-gradient-to-br from-primary-600 to-accent-600 rounded-2xl flex items-center justify-center text-3xl"
+                    animate={{ rotate: [0, 5, -5, 0] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    🎯
+                  </motion.div>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent break-words">
+                    Our Mission
+                  </h3>
+                </motion.div>
+                <motion.p
+                  className="text-lg text-gray-700 leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  To empower businesses worldwide with innovative technology solutions that drive growth, 
+                  enhance efficiency, and create lasting value. We are committed to delivering excellence 
+                  in every project while building meaningful partnerships with our clients.
+                </motion.p>
+                
+                {/* Animated corner accents */}
+                <motion.div
+                  className="absolute top-4 right-4 w-20 h-20 border-t-4 border-r-4 border-primary-400 rounded-tr-3xl opacity-20"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <motion.div
+                  className="absolute bottom-4 left-4 w-20 h-20 border-b-4 border-l-4 border-accent-400 rounded-bl-3xl opacity-20"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, delay: 1, repeat: Infinity }}
+                />
+              </div>
+            </motion.div>
+
+            {/* Vision */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.02 }}
+              className="relative group"
+            >
+              <motion.div
+                className="absolute -inset-4 bg-gradient-to-r from-accent-600 to-primary-600 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"
+                animate={{
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{ duration: 3, delay: 0.5, repeat: Infinity }}
+              />
+              <div className="relative bg-white/80 backdrop-blur-sm border-2 border-gray-200 group-hover:border-accent-400 rounded-3xl p-12 shadow-xl transition-all duration-500">
+                <motion.div
+                  className="flex items-center gap-4 mb-6"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <motion.div
+                    className="w-16 h-16 bg-gradient-to-br from-accent-600 to-primary-600 rounded-2xl flex items-center justify-center text-3xl"
+                    animate={{ rotate: [0, -5, 5, 0] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    🌟
+                  </motion.div>
+                  <h3 className="text-4xl font-bold bg-gradient-to-r from-accent-600 to-primary-600 bg-clip-text text-transparent">
+                    Our Vision
+                  </h3>
+                </motion.div>
+                <motion.p
+                  className="text-lg text-gray-700 leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  To be the global leader in digital transformation, recognized for our innovation, 
+                  quality, and commitment to client success. We envision a future where technology 
+                  seamlessly integrates with business to unlock unlimited potential.
+                </motion.p>
+
+                {/* Animated corner accents */}
+                <motion.div
+                  className="absolute top-4 left-4 w-20 h-20 border-t-4 border-l-4 border-accent-400 rounded-tl-3xl opacity-20"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <motion.div
+                  className="absolute bottom-4 right-4 w-20 h-20 border-b-4 border-r-4 border-primary-400 rounded-br-3xl opacity-20"
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{ duration: 2, delay: 1, repeat: Infinity }}
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

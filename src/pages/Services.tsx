@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { 
   FiCode, FiSmartphone, FiCloud, FiMonitor, FiPieChart, 
   FiSettings, FiDatabase, FiShield, FiZap, FiUsers,
-  FiTrendingUp, FiMessageSquare 
+  FiTrendingUp, FiMessageSquare, FiArrowRight 
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
@@ -20,6 +20,7 @@ const Services = () => {
         'API Development & Integration',
       ],
       technologies: ['React', 'Node.js', 'Python', 'PHP', 'Laravel', 'Django'],
+      slug: 'web-development',
     },
     {
       icon: FiSmartphone,
@@ -33,6 +34,7 @@ const Services = () => {
         'App Store Optimization',
       ],
       technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase'],
+      slug: 'mobile-apps',
     },
     {
       icon: FiCloud,
@@ -46,6 +48,7 @@ const Services = () => {
         'CI/CD Pipeline Implementation',
       ],
       technologies: ['AWS', 'Azure', 'Google Cloud', 'Kubernetes', 'Docker', 'Terraform'],
+      slug: 'cloud-solutions',
     },
     {
       icon: FiMonitor,
@@ -59,6 +62,7 @@ const Services = () => {
         'Usability Testing',
       ],
       technologies: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Principle'],
+      slug: 'ui-ux-design',
     },
     {
       icon: FiSettings,
@@ -72,6 +76,7 @@ const Services = () => {
         'Custom Business Logic',
       ],
       technologies: ['Zapier', 'Make', 'Power Automate', 'Python', 'Node.js'],
+      slug: 'automation',
     },
     {
       icon: FiDatabase,
@@ -85,6 +90,7 @@ const Services = () => {
         'Database Security',
       ],
       technologies: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'DynamoDB'],
+      slug: 'database-management',
     },
     {
       icon: FiShield,
@@ -98,6 +104,7 @@ const Services = () => {
         'Security Training',
       ],
       technologies: ['OAuth', 'JWT', 'Encryption', 'Firewall', 'VPN'],
+      slug: 'cybersecurity',
     },
     {
       icon: FiZap,
@@ -111,6 +118,7 @@ const Services = () => {
         'Load Testing',
       ],
       technologies: ['Redis', 'Varnish', 'CloudFlare', 'New Relic', 'GTmetrix'],
+      slug: 'performance-optimization',
     },
     {
       icon: FiPieChart,
@@ -124,6 +132,7 @@ const Services = () => {
         'Conversion Rate Optimization',
       ],
       technologies: ['Google Analytics', 'Mixpanel', 'Tableau', 'Power BI', 'D3.js'],
+      slug: 'analytics',
     },
     {
       icon: FiUsers,
@@ -137,6 +146,7 @@ const Services = () => {
         'Flexible Engagement Models',
       ],
       technologies: ['All Modern Stacks', 'Agile', 'Scrum', 'Jira', 'Slack'],
+      slug: 'dedicated-teams',
     },
     {
       icon: FiTrendingUp,
@@ -150,6 +160,7 @@ const Services = () => {
         'Social Media Integration',
       ],
       technologies: ['SEO Tools', 'HubSpot', 'Mailchimp', 'Salesforce', 'Google Ads'],
+      slug: 'digital-marketing',
     },
     {
       icon: FiMessageSquare,
@@ -163,6 +174,7 @@ const Services = () => {
         'SLA-based Support Plans',
       ],
       technologies: ['Monitoring Tools', 'Ticketing Systems', 'Logging', 'Analytics'],
+      slug: 'support-maintenance',
     },
   ];
 
@@ -170,23 +182,29 @@ const Services = () => {
     <div className="page-transition pt-20">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-accent-600 text-white py-16 relative overflow-hidden">
-        {/* Animated background elements */}
-        <motion.div 
-          className="absolute top-0 left-0 w-96 h-96 bg-primary-500 rounded-full opacity-10 blur-3xl"
-          animate={{ 
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div 
-          className="absolute bottom-0 right-0 w-96 h-96 bg-accent-500 rounded-full opacity-10 blur-3xl"
-          animate={{ 
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        />
+        {/* Animated service icons background */}
+        <div className="absolute inset-0 opacity-10">
+          <motion.div className="absolute top-10 left-10" animate={{ rotate: 360 }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }}>
+            <FiCode size={60} />
+          </motion.div>
+          <motion.div className="absolute top-20 right-20" animate={{ rotate: -360 }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
+            <FiCloud size={50} />
+          </motion.div>
+          <motion.div className="absolute bottom-20 left-1/4" animate={{ rotate: 360 }} transition={{ duration: 35, repeat: Infinity, ease: "linear" }}>
+            <FiSettings size={70} />
+          </motion.div>
+          <motion.div className="absolute bottom-10 right-1/3" animate={{ rotate: -360 }} transition={{ duration: 28, repeat: Infinity, ease: "linear" }}>
+            <FiSmartphone size={55} />
+          </motion.div>
+          <motion.div className="absolute top-1/2 left-1/2" animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }}>
+            <FiDatabase size={65} />
+          </motion.div>
+        </div>
+        
+        {/* Floating particles */}
+        <motion.div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full" animate={{ y: [-20, 20, -20], opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 3, repeat: Infinity }} />
+        <motion.div className="absolute top-1/3 right-1/4 w-3 h-3 bg-white rounded-full" animate={{ y: [20, -20, 20], opacity: [0.5, 1, 0.5] }} transition={{ duration: 4, repeat: Infinity }} />
+        <motion.div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white rounded-full" animate={{ y: [-15, 15, -15], opacity: [0.4, 0.9, 0.4] }} transition={{ duration: 3.5, repeat: Infinity }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -196,7 +214,7 @@ const Services = () => {
             className="text-center"
           >
             <motion.h1 
-              className="text-4xl md:text-5xl font-display font-bold mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 break-words"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -281,7 +299,7 @@ const Services = () => {
                   </div>
 
                   <div className="pt-4 border-t border-gray-100">
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1.5 mb-4">
                       {service.technologies.slice(0, 4).map((tech, idx) => (
                         <motion.span
                           key={idx}
@@ -300,6 +318,12 @@ const Services = () => {
                         </span>
                       )}
                     </div>
+                    <Link 
+                      to={`/services/${service.slug}`} 
+                      className="text-primary-600 font-semibold text-sm inline-flex items-center hover:text-primary-700 group-hover:gap-2 transition-all"
+                    >
+                      Learn More <FiArrowRight className="ml-1" />
+                    </Link>
                   </div>
                 </div>
               </motion.div>

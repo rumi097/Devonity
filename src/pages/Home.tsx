@@ -1,7 +1,28 @@
-import { motion } from 'framer-motion';
+import { motion, animate } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiCode, FiSmartphone, FiCloud, FiZap, FiUsers, FiAward } from 'react-icons/fi';
 import { HiCheckCircle } from 'react-icons/hi';
+import { useEffect, useRef } from 'react';
+
+const Counter = ({ value, suffix = '' }: { value: number; suffix?: string }) => {
+  const nodeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = nodeRef.current;
+    if (!node) return;
+
+    const controls = animate(0, value, {
+      duration: 2,
+      onUpdate(latestValue) {
+        node.textContent = Math.floor(latestValue).toString() + suffix;
+      }
+    });
+
+    return () => controls.stop();
+  }, [value, suffix]);
+
+  return <div ref={nodeRef} />;
+};
 
 const Home = () => {
   const services = [
@@ -32,10 +53,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { number: '100%', label: 'Client Satisfaction' },
-    { number: '24/7', label: 'Support Available' },
-    { number: '99.9%', label: 'Uptime Guarantee' },
-    { number: '100%', label: 'On-Time Delivery' },
+    { number: '100%', label: 'Client Satisfaction', value: 100, suffix: '%' },
+    { number: '24/7', label: 'Support Available', value: 24, suffix: '/7' },
+    { number: '99.9%', label: 'Uptime Guarantee', value: 99.9, suffix: '%' },
+    { number: '100%', label: 'On-Time Delivery', value: 100, suffix: '%' },
   ];
 
   const features = [
@@ -235,18 +256,18 @@ const Home = () => {
           </motion.text>
         </svg>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 overflow-hidden">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight break-words">
                 Transform Your
                 <span className="block text-gradient">Digital Future</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 leading-relaxed break-words">
                 Empowering businesses with innovative technology solutions. We deliver premium web, mobile, and cloud services that drive growth and success.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -371,21 +392,35 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-primary-600 to-accent-600" data-aos="fade-up">
+      <section className="py-12 bg-gradient-to-r from-primary-600 to-accent-600" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center text-white">
-                <div className="text-4xl md:text-5xl font-bold mb-2 stat-number">{stat.number}</div>
+              <motion.div 
+                key={index} 
+                className="text-center text-white"
+                animate={{
+                  x: [-10, 10, -10],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: index * 0.3,
+                  ease: "easeInOut"
+                }}
+              >
+                <div className="text-4xl md:text-5xl font-bold mb-2 stat-number">
+                  <Counter value={stat.value} suffix={stat.suffix} />
+                </div>
                 <div className="text-primary-100">{stat.label}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="section-title">Our Premium Services</h2>
@@ -394,7 +429,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -407,7 +442,7 @@ const Home = () => {
                   ease: [0.22, 1, 0.36, 1]
                 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="card service-card p-8 group"
+                className="card service-card p-4 sm:p-6 md:p-8 group"
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-primary-600 to-accent-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="text-white" size={32} />
@@ -430,7 +465,7 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 gradient-bg">
+      <section className="py-12 sm:py-16 md:py-24 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
@@ -480,7 +515,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-primary-600 to-accent-600 text-white">
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-r from-primary-600 to-accent-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
             Ready to Start Your Project?
