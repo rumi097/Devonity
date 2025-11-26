@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { BlogPost, BlogCategory } from '../types/blog';
 import { getAllPosts, getAllCategories, getPostsByCategory } from '../lib/sanityQueries';
 import { urlFor } from '../lib/sanity';
+import PagePreviews from '../components/PagePreviews';
 
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -323,6 +324,9 @@ const Blog = () => {
           </form>
         </div>
       </section>
+
+      {/* Page Previews */}
+      <PagePreviews />
     </div>
   );
 };

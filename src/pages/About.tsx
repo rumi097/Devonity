@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FiTarget, FiAward, FiUsers, FiTrendingUp } from 'react-icons/fi';
+import PagePreviews from '../components/PagePreviews';
 
 const About = () => {
   const values = [
@@ -481,6 +482,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Page Previews */}
+      <PagePreviews />
     </div>
   );
 };

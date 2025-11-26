@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import PagePreviews from '../components/PagePreviews';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all');
@@ -224,6 +225,9 @@ const Portfolio = () => {
           </a>
         </div>
       </section>
+
+      {/* Page Previews */}
+      <PagePreviews />
     </div>
   );
 };

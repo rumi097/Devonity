@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiClock, FiCheckCircle, FiX } from 'react-icons/fi';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
+import PagePreviews from '../components/PagePreviews';
 
 interface FormData {
   name: string;
@@ -617,6 +618,9 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+      {/* Page Previews */}
+      <PagePreviews />
     </div>
   );
 };

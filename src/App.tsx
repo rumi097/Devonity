@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import QuickLinks from './components/QuickLinks';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
@@ -35,6 +36,7 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col overflow-x-hidden">
         <Navbar />
+        <QuickLinks />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

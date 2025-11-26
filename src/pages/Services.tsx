@@ -5,6 +5,7 @@ import {
   FiTrendingUp, FiMessageSquare, FiArrowRight 
 } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import PagePreviews from '../components/PagePreviews';
 
 const Services = () => {
   const services = [
@@ -439,6 +440,9 @@ const Services = () => {
           </motion.div>
         </motion.div>
       </section>
+
+      {/* Page Previews */}
+      <PagePreviews />
     </div>
   );
 };
