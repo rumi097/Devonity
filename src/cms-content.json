@@ -1,0 +1,262 @@
+{
+  "company": {
+    "name": "Devonity",
+    "tagline": "Technologies Ltd.",
+    "description": "Transforming businesses through innovative technology solutions. We deliver premium web, mobile, and cloud services that drive growth and success.",
+    "founded": "2008",
+    "experience": "15+"
+  },
+  "contact": {
+    "email": {
+      "primary": "info@devonity.com",
+      "support": "support@devonity.com"
+    },
+    "phone": {
+      "primary": "+1 (555) 123-4567",
+      "secondary": "+1 (555) 987-6543"
+    },
+    "address": {
+      "street": "123 Tech Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94105",
+      "country": "USA"
+    },
+    "hours": {
+      "weekdays": "Mon - Fri: 9:00 AM - 6:00 PM",
+      "weekend": "Sat - Sun: Closed"
+    },
+    "social": {
+      "facebook": "https://facebook.com/devonity",
+      "twitter": "https://twitter.com/devonity",
+      "linkedin": "https://linkedin.com/company/devonity",
+      "github": "https://github.com/devonity",
+      "instagram": "https://instagram.com/devonity"
+    }
+  },
+  "stats": {
+    "projects": "500+",
+    "clients": "200+",
+    "teamMembers": "50+",
+    "yearsExperience": "15+"
+  },
+  "hero": {
+    "title": "Transform Your",
+    "highlight": "Digital Future",
+    "description": "Empowering businesses with innovative technology solutions. We deliver premium web, mobile, and cloud services that drive growth and success."
+  },
+  "services": [
+    {
+      "id": "web-dev",
+      "title": "Custom Web Development",
+      "description": "We craft bespoke web applications tailored to your unique business requirements. Using cutting-edge technologies like React, Vue, Angular, and modern backend frameworks, we build scalable, performant solutions that drive results.",
+      "features": [
+        "Progressive Web Apps (PWA)",
+        "E-commerce Platforms",
+        "Content Management Systems",
+        "Enterprise Web Applications",
+        "API Development & Integration"
+      ],
+      "technologies": ["React", "Node.js", "Python", "PHP", "Laravel", "Django"]
+    },
+    {
+      "id": "mobile-dev",
+      "title": "Mobile App Development",
+      "description": "Native and cross-platform mobile applications for iOS and Android. We leverage React Native, Flutter, and native technologies to deliver exceptional mobile experiences that engage users and drive business growth.",
+      "features": [
+        "Native iOS Development (Swift)",
+        "Native Android Development (Kotlin)",
+        "Cross-platform with React Native",
+        "Flutter App Development",
+        "App Store Optimization"
+      ],
+      "technologies": ["React Native", "Flutter", "Swift", "Kotlin", "Firebase"]
+    },
+    {
+      "id": "cloud-solutions",
+      "title": "Cloud Solutions & DevOps",
+      "description": "Comprehensive cloud infrastructure services and DevOps solutions. We help you migrate to the cloud, optimize your infrastructure, and implement CI/CD pipelines for seamless deployment and scaling.",
+      "features": [
+        "AWS, Azure & Google Cloud Setup",
+        "Cloud Migration Services",
+        "Infrastructure as Code (IaC)",
+        "Kubernetes & Docker Containerization",
+        "CI/CD Pipeline Implementation"
+      ],
+      "technologies": ["AWS", "Azure", "Google Cloud", "Kubernetes", "Docker", "Terraform"]
+    },
+    {
+      "id": "ui-ux",
+      "title": "UI/UX Design",
+      "description": "User-centered design that combines aesthetics with functionality. Our expert designers create intuitive interfaces and engaging user experiences that captivate your audience and enhance conversion rates.",
+      "features": [
+        "User Research & Analysis",
+        "Wireframing & Prototyping",
+        "Interactive Design Systems",
+        "Mobile-First Design",
+        "Usability Testing"
+      ],
+      "technologies": ["Figma", "Adobe XD", "Sketch", "InVision", "Principle"]
+    },
+    {
+      "id": "automation",
+      "title": "Business Automation",
+      "description": "Intelligent automation solutions that streamline your operations and boost productivity. We implement custom workflows, integrate systems, and automate repetitive tasks to save time and reduce costs.",
+      "features": [
+        "Workflow Automation",
+        "Business Process Optimization",
+        "RPA (Robotic Process Automation)",
+        "Integration with Third-party Tools",
+        "Custom Business Logic"
+      ],
+      "technologies": ["Zapier", "Make", "Power Automate", "Python", "Node.js"]
+    },
+    {
+      "id": "database",
+      "title": "Database Design & Management",
+      "description": "Robust database architecture and management services. We design efficient database schemas, optimize queries, and ensure data integrity for your mission-critical applications.",
+      "features": [
+        "Database Design & Architecture",
+        "Performance Optimization",
+        "Data Migration Services",
+        "Backup & Recovery Solutions",
+        "Database Security"
+      ],
+      "technologies": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "DynamoDB"]
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "ecommerce-platform",
+      "title": "E-Commerce Platform",
+      "category": "web",
+      "description": "Modern e-commerce solution with advanced inventory management",
+      "image": "https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800",
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+      "link": "https://example.com/project1",
+      "github": "https://github.com/yourorg/project1"
+    },
+    {
+      "id": "fitness-app",
+      "title": "Fitness Tracking App",
+      "category": "mobile",
+      "description": "Cross-platform mobile app for health and fitness tracking",
+      "image": "https://images.unsplash.com/photo-1461773518188-b3e86f98242f?w=800",
+      "technologies": ["React Native", "Firebase", "Redux"],
+      "link": "https://example.com/project2",
+      "github": "https://github.com/yourorg/project2"
+    },
+    {
+      "id": "cloud-infrastructure",
+      "title": "Cloud Infrastructure",
+      "category": "cloud",
+      "description": "Enterprise cloud migration and optimization project",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+      "technologies": ["AWS", "Kubernetes", "Terraform", "Docker"],
+      "link": "https://example.com/project3",
+      "github": ""
+    },
+    {
+      "id": "banking-dashboard",
+      "title": "Banking Dashboard",
+      "category": "web",
+      "description": "Secure banking dashboard with real-time analytics",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      "technologies": ["Vue.js", "Python", "PostgreSQL", "Chart.js"],
+      "link": "https://example.com/project4",
+      "github": ""
+    }
+  ],
+  "blog": [
+    {
+      "id": "web-dev-2024",
+      "title": "The Future of Web Development in 2024",
+      "excerpt": "Exploring emerging trends and technologies shaping the future of web development, from AI integration to serverless architectures.",
+      "author": "Sarah Johnson",
+      "date": "2024-11-20",
+      "readTime": "5 min read",
+      "category": "Web Development",
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800",
+      "link": "/blog/web-dev-2024"
+    },
+    {
+      "id": "mobile-first-design",
+      "title": "Mobile-First Design: Best Practices",
+      "excerpt": "Learn how to create exceptional mobile experiences with our comprehensive guide to mobile-first design principles.",
+      "author": "Michael Chen",
+      "date": "2024-11-18",
+      "readTime": "7 min read",
+      "category": "Design",
+      "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800",
+      "link": "/blog/mobile-first-design"
+    },
+    {
+      "id": "cloud-migration",
+      "title": "Cloud Migration Strategy Guide",
+      "excerpt": "A step-by-step approach to successfully migrating your infrastructure to the cloud while minimizing downtime and costs.",
+      "author": "Emily Rodriguez",
+      "date": "2024-11-15",
+      "readTime": "10 min read",
+      "category": "Cloud",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800",
+      "link": "/blog/cloud-migration"
+    }
+  ],
+  "team": [
+    {
+      "id": "sarah-johnson",
+      "name": "Sarah Johnson",
+      "role": "CEO & Founder",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+      "bio": "15+ years in tech leadership"
+    },
+    {
+      "id": "michael-chen",
+      "name": "Michael Chen",
+      "role": "CTO",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+      "bio": "Former Google Engineer"
+    },
+    {
+      "id": "emily-rodriguez",
+      "name": "Emily Rodriguez",
+      "role": "Head of Design",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+      "bio": "Award-winning UX Designer"
+    },
+    {
+      "id": "david-kim",
+      "name": "David Kim",
+      "role": "Lead Developer",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400",
+      "bio": "Full-stack Expert"
+    }
+  ],
+  "about": {
+    "story": [
+      "Founded in 2021, Devonity Technologies Limited has grown from a small startup to a leading IT solutions provider. Our journey began with a simple mission: to help businesses leverage technology for growth and success.",
+      "Today, we're proud to have delivered over 500 successful projects for clients ranging from startups to Fortune 500 companies. Our team of 50+ dedicated professionals brings expertise in web development, mobile apps, cloud solutions, and more.",
+      "We don't just build software – we create solutions that transform businesses, enhance user experiences, and drive measurable results."
+    ],
+    "mission": "To empower businesses worldwide with innovative technology solutions that drive growth, enhance efficiency, and create lasting value. We are committed to delivering excellence in every project while building meaningful partnerships with our clients.",
+    "vision": "To be the global leader in digital transformation, recognized for our innovation, quality, and commitment to client success. We envision a future where technology seamlessly integrates with business to unlock unlimited potential.",
+    "values": [
+      {
+        "title": "Innovation First",
+        "description": "We stay ahead of the curve, constantly exploring new technologies and methodologies to deliver cutting-edge solutions."
+      },
+      {
+        "title": "Quality Excellence",
+        "description": "Quality is non-negotiable. We follow best practices and maintain high standards in every project we undertake."
+      },
+      {
+        "title": "Client-Centric",
+        "description": "Your success is our success. We build lasting partnerships by truly understanding and exceeding your expectations."
+      },
+      {
+        "title": "Continuous Growth",
+        "description": "We invest in our team's development and embrace learning to provide the best solutions for our clients."
+      }
+    ]
+  }
+}
