@@ -464,6 +464,245 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Portfolio Preview Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 text-gradient">
+              Our Recent Work
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore our portfolio of successful projects and case studies
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                title: 'E-Commerce Platform',
+                category: 'Web Development',
+                description: 'Modern online shopping experience with real-time inventory',
+                image: 'bg-gradient-to-br from-blue-500 to-purple-600',
+                icon: FiCode,
+              },
+              {
+                title: 'Mobile Banking App',
+                category: 'Mobile Development',
+                description: 'Secure and intuitive banking application for iOS & Android',
+                image: 'bg-gradient-to-br from-green-500 to-teal-600',
+                icon: FiSmartphone,
+              },
+              {
+                title: 'Cloud Infrastructure',
+                category: 'Cloud Solutions',
+                description: 'Scalable AWS deployment with auto-scaling capabilities',
+                image: 'bg-gradient-to-br from-orange-500 to-red-600',
+                icon: FiCloud,
+              },
+            ].map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
+              >
+                <Link to="/portfolio" className="group block">
+                  <motion.div
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className="card overflow-hidden h-full"
+                  >
+                    {/* Project Image/Icon */}
+                    <div className={`relative h-48 sm:h-56 ${project.image} flex items-center justify-center overflow-hidden`}>
+                      <motion.div
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          rotate: [0, 5, -5, 0],
+                        }}
+                        transition={{ duration: 4, repeat: Infinity }}
+                        className="text-white/90"
+                      >
+                        <project.icon size={64} />
+                      </motion.div>
+                      <motion.div
+                        className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"
+                        initial={false}
+                      />
+                    </div>
+
+                    {/* Project Info */}
+                    <div className="p-6">
+                      <motion.span 
+                        className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full mb-3"
+                        animate={{ scale: [1, 1.05, 1] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        {project.category}
+                      </motion.span>
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-4">
+                        {project.description}
+                      </p>
+                      <motion.div
+                        className="flex items-center text-primary-600 font-semibold text-sm"
+                        whileHover={{ x: 5 }}
+                      >
+                        View Details <FiArrowRight className="ml-2" />
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link to="/portfolio" className="btn-primary">
+              View All Projects <FiArrowRight className="inline ml-2" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Blog Preview Section */}
+      <section className="py-12 sm:py-16 md:py-20 gradient-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 text-gradient">
+              Latest Insights
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+              Stay updated with the latest trends, tutorials, and industry news
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              {
+                title: 'The Future of Web Development in 2025',
+                category: 'Web Development',
+                excerpt: 'Exploring emerging technologies and frameworks shaping the web',
+                date: 'Nov 20, 2025',
+                readTime: '5 min read',
+                color: 'from-blue-500 to-blue-600',
+              },
+              {
+                title: 'Building Scalable Cloud Applications',
+                category: 'Cloud Computing',
+                excerpt: 'Best practices for designing and deploying cloud-native apps',
+                date: 'Nov 15, 2025',
+                readTime: '7 min read',
+                color: 'from-purple-500 to-purple-600',
+              },
+              {
+                title: 'Mobile-First Development Strategy',
+                category: 'Mobile Development',
+                excerpt: 'Why mobile-first approach is crucial for modern applications',
+                date: 'Nov 10, 2025',
+                readTime: '6 min read',
+                color: 'from-pink-500 to-pink-600',
+              },
+            ].map((post, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
+              >
+                <Link to="/blog" className="group block h-full">
+                  <motion.div
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className="card h-full overflow-hidden"
+                  >
+                    {/* Blog Header with animated gradient */}
+                    <motion.div
+                      className={`h-2 bg-gradient-to-r ${post.color}`}
+                      animate={{
+                        backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                      }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                      style={{ backgroundSize: '200% 200%' }}
+                    />
+
+                    <div className="p-6">
+                      {/* Category Badge */}
+                      <motion.span
+                        className={`inline-block px-3 py-1 bg-gradient-to-r ${post.color} text-white text-xs font-semibold rounded-full mb-4`}
+                        animate={{ 
+                          boxShadow: [
+                            '0 0 0 0 rgba(99, 102, 241, 0)',
+                            '0 0 0 8px rgba(99, 102, 241, 0)',
+                          ]
+                        }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        {post.category}
+                      </motion.span>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary-600 transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                        {post.excerpt}
+                      </p>
+
+                      {/* Meta Info */}
+                      <div className="flex items-center justify-between text-xs text-gray-500 mb-4">
+                        <span className="flex items-center">
+                          <FiBook className="mr-1" />
+                          {post.readTime}
+                        </span>
+                        <span>{post.date}</span>
+                      </div>
+
+                      {/* Read More Link */}
+                      <motion.div
+                        className="flex items-center text-primary-600 font-semibold text-sm"
+                        whileHover={{ x: 5 }}
+                      >
+                        Read Article <FiArrowRight className="ml-2" />
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link to="/blog" className="btn-primary">
+              View All Articles <FiArrowRight className="inline ml-2" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-12 sm:py-16 md:py-24 gradient-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -858,241 +1097,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-                    </motion.div>
-                    <h3 className="text-xs font-bold mb-1 group-hover:text-purple-600 transition-colors">About</h3>
-                    <p className="text-[10px] text-gray-500">Our Story</p>
-                  </div>
-                </motion.div>
-              </Link>
-            </motion.div>
-
-            {/* Services Preview */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-            >
-              <Link to="/services" className="group block">
-                <motion.div
-                  whileHover={{ y: -4, scale: 1.05 }}
-                  animate={{ 
-                    boxShadow: [
-                      '0 4px 15px rgba(34, 197, 94, 0.2)',
-                      '0 6px 20px rgba(34, 197, 94, 0.3)',
-                      '0 4px 15px rgba(34, 197, 94, 0.2)',
-                    ],
-                    y: [0, -2, 0]
-                  }}
-                  transition={{ 
-                    boxShadow: { duration: 2, repeat: Infinity, delay: 0.3 },
-                    y: { duration: 3, repeat: Infinity, delay: 0.2 },
-                    hover: { duration: 0.2 }
-                  }}
-                  className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-green-100"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-green-600/5"
-                    animate={{ 
-                      opacity: [0.3, 0.6, 0.3],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 0.3 }}
-                  />
-                  <div className="relative z-10">
-                    <motion.div 
-                      className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center"
-                      animate={{ 
-                        rotate: [0, -5, 5, 0],
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-                    >
-                      <motion.div
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                      >
-                        <FiGrid className="text-white" size={18} />
-                      </motion.div>
-                    </motion.div>
-                    <h3 className="text-xs font-bold mb-1 group-hover:text-green-600 transition-colors">Services</h3>
-                    <p className="text-[10px] text-gray-500">What We Do</p>
-                  </div>
-                </motion.div>
-              </Link>
-            </motion.div>
-
-            {/* Portfolio Preview */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <Link to="/portfolio" className="group block">
-                <motion.div
-                  whileHover={{ y: -4, scale: 1.05 }}
-                  animate={{ 
-                    boxShadow: [
-                      '0 4px 15px rgba(249, 115, 22, 0.2)',
-                      '0 6px 20px rgba(249, 115, 22, 0.3)',
-                      '0 4px 15px rgba(249, 115, 22, 0.2)',
-                    ],
-                    y: [0, -2, 0]
-                  }}
-                  transition={{ 
-                    boxShadow: { duration: 2, repeat: Infinity, delay: 0.6 },
-                    y: { duration: 3, repeat: Infinity, delay: 0.4 },
-                    hover: { duration: 0.2 }
-                  }}
-                  className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-orange-100"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-orange-600/5"
-                    animate={{ 
-                      opacity: [0.3, 0.6, 0.3],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 0.6 }}
-                  />
-                  <div className="relative z-10">
-                    <motion.div 
-                      className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center"
-                      animate={{ 
-                        rotate: [0, 5, -5, 0],
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                    >
-                      <motion.div
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                      >
-                        <FiBriefcase className="text-white" size={18} />
-                      </motion.div>
-                    </motion.div>
-                    <h3 className="text-xs font-bold mb-1 group-hover:text-orange-600 transition-colors">Portfolio</h3>
-                    <p className="text-[10px] text-gray-500">Our Work</p>
-                  </div>
-                </motion.div>
-              </Link>
-            </motion.div>
-
-            {/* Blog Preview */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.25 }}
-            >
-              <Link to="/blog" className="group block">
-                <motion.div
-                  whileHover={{ y: -4, scale: 1.05 }}
-                  animate={{ 
-                    boxShadow: [
-                      '0 4px 15px rgba(236, 72, 153, 0.2)',
-                      '0 6px 20px rgba(236, 72, 153, 0.3)',
-                      '0 4px 15px rgba(236, 72, 153, 0.2)',
-                    ],
-                    y: [0, -2, 0]
-                  }}
-                  transition={{ 
-                    boxShadow: { duration: 2, repeat: Infinity, delay: 0.9 },
-                    y: { duration: 3, repeat: Infinity, delay: 0.6 },
-                    hover: { duration: 0.2 }
-                  }}
-                  className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-pink-100"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-pink-600/5"
-                    animate={{ 
-                      opacity: [0.3, 0.6, 0.3],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 0.9 }}
-                  />
-                  <div className="relative z-10">
-                    <motion.div 
-                      className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-pink-500 to-pink-600 rounded-lg flex items-center justify-center"
-                      animate={{ 
-                        rotate: [0, -5, 5, 0],
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{ duration: 4, repeat: Infinity, delay: 1.5 }}
-                    >
-                      <motion.div
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                      >
-                        <FiBook className="text-white" size={18} />
-                      </motion.div>
-                    </motion.div>
-                    <h3 className="text-xs font-bold mb-1 group-hover:text-pink-600 transition-colors">Blog</h3>
-                    <p className="text-[10px] text-gray-500">Insights</p>
-                  </div>
-                </motion.div>
-              </Link>
-            </motion.div>
-
-            {/* Contact Preview */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              <Link to="/contact" className="group block">
-                <motion.div
-                  whileHover={{ y: -4, scale: 1.05 }}
-                  animate={{ 
-                    boxShadow: [
-                      '0 4px 15px rgba(239, 68, 68, 0.2)',
-                      '0 6px 20px rgba(239, 68, 68, 0.3)',
-                      '0 4px 15px rgba(239, 68, 68, 0.2)',
-                    ],
-                    y: [0, -2, 0]
-                  }}
-                  transition={{ 
-                    boxShadow: { duration: 2, repeat: Infinity, delay: 1.2 },
-                    y: { duration: 3, repeat: Infinity, delay: 0.8 },
-                    hover: { duration: 0.2 }
-                  }}
-                  className="bg-white rounded-xl p-3 text-center relative overflow-hidden border border-red-100"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-red-600/5"
-                    animate={{ 
-                      opacity: [0.3, 0.6, 0.3],
-                      scale: [1, 1.1, 1]
-                    }}
-                    transition={{ duration: 3, repeat: Infinity, delay: 1.2 }}
-                  />
-                  <div className="relative z-10">
-                    <motion.div 
-                      className="w-10 h-10 mx-auto mb-2 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center"
-                      animate={{ 
-                        rotate: [0, 5, -5, 0],
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-                    >
-                      <motion.div
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                      >
-                        <FiMail className="text-white" size={18} />
-                      </motion.div>
-                    </motion.div>
-                    <h3 className="text-xs font-bold mb-1 group-hover:text-red-600 transition-colors">Contact</h3>
-                    <p className="text-[10px] text-gray-500">Get Quote</p>
-                  </div>
-                </motion.div>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-r from-primary-600 to-accent-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
